@@ -1,13 +1,15 @@
 <template>
-  <section id="home" class="h-screen flex justify-center items-center bg-gradient-to-r from-blue-500 to-green-500">
-    <h1 class="text-white text-4xl">Bienvenido a nuestro servicio de impresión 3D</h1>
+  <section
+    id="home"
+    class="h-screen flex justify-center items-center bg-cover bg-center bg-no-repeat"
+    :style="{ backgroundImage: `url(${backgroundImage})` }"
+  >
+    <h1 class="text-gray-900 text-4xl bg-white bg-opacity-50 p-2 rounded-lg">
+      Brindando el mejor servicio de impresión
+    </h1>
   </section>
 </template>
 
 <script setup lang="ts">
-// Logica adicional si se lo requiere
+import backgroundImage from "../assets/fondo2.jpeg"
 </script>
-
-<style>
-/* Estilos adicionales si se lo requiere */
-</style>

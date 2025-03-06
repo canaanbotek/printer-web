@@ -23,9 +23,9 @@ const messages = {
     navbar: {
       home: "Inicio",
       about: "Sobre Nosotros",
-      work: "Trabajos Realizados",
+      work: "Trabajos",
       printers: "Impresoras",
-      partners: "Empresas Colaboradoras",
+      partners: "Colaboradores",
       contact: "Contacto",
       language: "Idioma"
     },
