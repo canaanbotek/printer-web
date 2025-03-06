@@ -4,8 +4,10 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: "Home",
-};
+<script setup lang="ts">
+// Logica adicional si se lo requiere
 </script>
+
+<style>
+/* Estilos adicionales si se lo requiere */
+</style>

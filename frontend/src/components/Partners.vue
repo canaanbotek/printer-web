@@ -14,8 +14,10 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: "Partners",
-};
+<script setup lang="ts">
+// Logica adicional si se lo requiere
 </script>
+
+<style>
+/* Estilos adicionales si se lo requiere */
+</style>
