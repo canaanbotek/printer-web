@@ -1,16 +1,15 @@
 <template>
-  <section id="about" class="h-screen flex justify-center items-center bg-gradient-to-r from-gray-100 to-gray-300 p-6">
-    <div class="flex flex-wrap justify-center gap-8 max-w-5xl w-full">
+  <section id="about" class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-gray-100 to-gray-300 py-20 relative">
+    <!-- Contenedor de las tarjetas -->
+    <div class="flex flex-wrap justify-center gap-8 max-w-5xl relative">
       <div
         v-for="(member, index) in teamMembers"
         :key="index"
-        class="bg-white rounded-lg shadow-lg p-4 w-full sm:w-80 md:w-96 lg:w-[28rem] text-center transform transition-transform duration-300 hover:scale-105"
+        class="bg-white rounded-lg shadow-lg p-4 w-80 min-w-[250px] max-w-[320px] text-center transform transition-transform duration-300 hover:scale-105"
       >
-        <img :src="member.image" :alt="member.name" class="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 mx-auto rounded-lg object-cover" />
-        <h3 class="text-lg md:text-xl font-semibold mt-4">{{ member.name }}</h3>
-        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
-          {{ member.description }}
-        </p>
+        <img :src="member.image" :alt="member.name" class="w-128 h-128 mx-auto rounded object-cover" />
+        <h3 class="text-xl font-semibold mt-4">{{ member.name }}</h3>
+        <p class="text-gray-600">{{ member.description }}</p>
       </div>
     </div>
   </section>

@@ -1,7 +1,13 @@
 <template>
-  <section id="contact" class="h-screen flex justify-center items-center bg-gradient-to-r from-red-500 to-orange-500 px-4">
-    <div class="text-center text-white w-full max-w-lg">
+    <section id="partners" class="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-gray-100 to-gray-300 relative">
+    <!-- Título y descripción -->
+    <div class="flex flex-col justify-center items-center top-4 left-4 text-gray-800 p-16">
       <h2 class="text-3xl">{{ $t("contact.title") }}</h2>
+      <p class="mt-2 text-lg text-gray-800 max-w-2xl text-center">
+        Si les interesa saber algo mas, puede contactarnos completando el formulario 
+      </p>
+    </div>
+    <div class="text-center text-white w-full max-w-lg">
       <form @submit.prevent="submitForm" class="flex flex-col space-y-4">
         <input 
           v-model="email" 
