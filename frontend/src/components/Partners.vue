@@ -1,9 +1,14 @@
 <template>
-  <section id="partners" class="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-gray-100 to-gray-300 relative">
-    <!-- Título y descripción -->
-    <div class="flex flex-col justify-center items-center top-4 left-4 text-gray-800 p-16">
-      <h2 class="text-3xl font-semibold">Empresas Colaboradoras</h2>
-      <p class="mt-2 text-lg text-gray-800 max-w-2xl text-center">
+  <section id="partners" class="h-screen flex flex-col justify-center items-center relative p-16">
+
+    <!-- Sección de Título y Descripción -->
+    <div class="text-center mb-10">
+      <h1 class="text-gray-900 text-4xl font-bold mb-4 relative">
+        Empresas Colaboradoras
+        <!-- Línea verde debajo del h1 -->
+        <span class="line"></span>
+      </h1>
+      <p class="text-lg text-gray-900">
         Colaboramos con varias empresas para ofrecerte los mejores productos y servicios de impresión 3D. Aquí puedes ver algunas de nuestras empresas asociadas.
       </p>
     </div>
@@ -19,7 +24,7 @@
           class="flex justify-center transform transition-transform duration-300 hover:scale-105"
         >
           <div class="bg-white rounded-lg shadow-lg p-4 flex justify-center items-center">
-            <img :src="logo.src" :alt="logo.alt" class="w-32 h-auto"/>
+            <img :src="logo.src" :alt="logo.alt" class="w-64 h-auto"/>
           </div>
         </a>
       </div>

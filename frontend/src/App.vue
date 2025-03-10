@@ -2,9 +2,11 @@
   <div class="bg-white w-full min-h-screen">
     <Navbar />
     <Home />
-    <About />
     <Work />
+    <Materials />
     <Printers />
+    <WhyUs />
+    <About />
     <Partners />
     <Contact />
     <Footer />
@@ -21,6 +23,8 @@ import Printers from "./components/Printers.vue";
 import Partners from "./components/Partners.vue";
 import Contact from "./components/Contact.vue";
 import Footer from "./components/Footer.vue";
+import Materials from "./components/Materials.vue";
+import WhyUs from "./components/WhyUs.vue";
 
 // Definir un ref tipado para la sección actual
 const currentSection = ref<string>("home");

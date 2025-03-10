@@ -3,7 +3,7 @@
     <div class="max-w-screen-xl mx-auto p-1 flex justify-between items-center">
     
       <!-- Logo / home -->
-      <a href="#home" class="font-bold">
+      <a href="#home">
         <span><img src="../assets/icono1.png" alt="Trabajo 1" class="w-40"/></span>
       </a>
       
