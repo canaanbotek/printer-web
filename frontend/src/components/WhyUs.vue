@@ -1,0 +1,51 @@
+<template>
+  <section id="who-us" class="min-h-screen flex items-center py-20 w-full">
+    <div class="container mx-auto px-8 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <!-- Columna de texto -->
+      <div class="space-y-8">
+        <div v-for="(item, index) in reasons" :key="index">
+          <h3 class="text-2xl font-bold text-gray-900">{{ item.title }}</h3>
+          <p class="text-gray-700 mt-2">{{ item.description }}</p>
+        </div>
+      </div>
+
+      <!-- Columna de imagen -->
+      <div class="flex justify-center">
+        <img :src="image" alt="Por qué elegirnos" class="w-full max-w-lg object-cover rounded-lg shadow-lg" />
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+const reasons = [
+  {
+    title: "Calidad Garantizada",
+    description: "Utilizamos los mejores materiales y tecnología de impresión avanzada para garantizar resultados de alta precisión."
+  },
+  {
+    title: "Rapidez y Eficiencia",
+    description: "Nuestro proceso optimizado nos permite entregar piezas en tiempo récord sin comprometer la calidad."
+  },
+  {
+    title: "Experiencia y Profesionalismo",
+    description: "Contamos con un equipo de ingenieros expertos en impresión 3D y diseño industrial para brindarte la mejor asesoría."
+  }
+];
+
+const image = "/src/assets/why-us.png"
+</script>
+  
+<style>
+.line {
+  content: "";
+  display: block;
+  width: 10%; /* Configura el largo de la línea */
+  height: 4px; /* Grosor de la línea */
+  background-color: #28a745; /* Color verde */
+  position: absolute;
+  bottom: -15px; /* Ajusta la distancia entre el texto y la línea */
+  left: 50%; /* Establece la posición inicial en el centro */
+  transform: translateX(-50%); /* Desplaza la línea hacia la izquierda para centrarla */
+}
+</style>
