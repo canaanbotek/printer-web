@@ -9,7 +9,7 @@
     <!-- Contenedor de texto alineado arriba a la izquierda -->
     <div class="absolute top-12 left-8 max-w-lg text-left text-white z-10">
       <h1 class="text-4xl font-bold mb-4">Con el mejor equipamiento</h1>
-      <p class="text-lg leading-relaxed text-justify font-serif">
+      <p class="text-lg leading-relaxed text-justify">
         La Creality K1C se presenta como una solución de impresión 3D robusta y eficiente, especialmente diseñada para satisfacer la demanda de piezas industriales
         dada su amplia compatibilidad para trabajar con materiales como el PLA, PETG, ABS, PA, PC, PC-ABS, TPU, ASA, PLA-CF, PA-CF, PET-CF, Nylon y Fibra de carbono.
         Ademas sus altas velocidades de trabajo permite rápidas iteraciones en el desarrollo de nuevas piezas y lograr entregas en tiempo record.

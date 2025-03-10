@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(192, 218, 226));
 }
 
 h1 {
@@ -59,9 +60,10 @@ button:focus-visible {
 }
 
 #app {
-  max-width: 1280px;
+  width: 100%;
+  max-width: 80%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem; /* Puedes ajustar el padding según lo necesites */
   text-align: center;
 }
 

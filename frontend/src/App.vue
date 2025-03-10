@@ -7,6 +7,7 @@
     <Printers />
     <Partners />
     <Contact />
+    <Footer />
   </div>
 </template>
 
@@ -19,6 +20,7 @@ import Work from "./components/Work.vue";
 import Printers from "./components/Printers.vue";
 import Partners from "./components/Partners.vue";
 import Contact from "./components/Contact.vue";
+import Footer from "./components/Footer.vue";
 
 // Definir un ref tipado para la sección actual
 const currentSection = ref<string>("home");
