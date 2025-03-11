@@ -1,13 +1,13 @@
 <template>
   <section
     id="about"
-    class="min-h-screen flex flex-col items-center justify-center py-20">
+    class="flex flex-col items-center justify-center p-5 py-20">
 
     <!-- Sección de título y descripción -->
     <div class="text-center mb-10">
       <h1 class="text-gray-900 text-4xl font-bold mb-4 relative">
         Nuestro Equipo
-        <span class="line"></span>
+        <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
       </h1>
       <p class="text-lg text-gray-900">
         Somos un equipo de ingenieros electrónicos con experiencia en la industria,

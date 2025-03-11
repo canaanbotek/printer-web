@@ -1,14 +1,14 @@
 <template>
   <section
     id="work"
-    class="min-h-screen flex flex-col justify-center items-center py-20"
+    class="min-h-screen flex flex-col justify-center items-center p-5"
   >
     <!-- Sección de Título y Descripción -->
     <div class="text-center mb-10">
       <h1 class="text-gray-900 text-4xl font-bold mb-4 relative">
         Soluciones impresas en 3D
         <!-- Línea verde debajo del h1 -->
-        <span class="line"></span>
+        <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
       </h1>
       <p class="text-lg text-gray-900">
         Nuestro servicio de impresión 3D le ayudará a fabricar cualquier tipo de pieza en un plazo de entrega rápido. 
@@ -23,17 +23,17 @@
       <div
         v-for="(work, index) in workItems"
         :key="index"
-        class="bg-white rounded-lg shadow-lg p-4 transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+        class="bg-green-200 rounded-lg shadow-lg p-2 transform transition-transform duration-300 hover:scale-105 cursor-pointer"
         @click="openImage(work.image)"
       >
         <!-- Título de la tarjeta -->
         <h3 class="text-lg font-semibold mt-4 text-gray-900">{{ work.title }}</h3>
 
         <!-- Imagen de la tarjeta -->
-        <img :src="work.image" :alt="work.title" class="w-full h-64 object-cover rounded-md mt-4" />
+        <img :src="work.image" :alt="work.title" class="w-full h-64 object-cover mt-4" />
 
         <!-- Descripción de la tarjeta -->
-        <p class="text-sm text-gray-700 mt-2">{{ work.description }}</p>
+        <p class="text-sm text-gray-700 p-2">{{ work.description }}</p>
       </div>
     </div>
 

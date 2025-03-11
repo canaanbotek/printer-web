@@ -1,41 +1,46 @@
 <template>
-    <section id="materials" class="min-h-screen flex flex-col items-center py-20">
+    <section id="materials" class="flex flex-col items-center p-5 w-full py-20">
       <!-- Título y descripción -->
       <div class="text-center max-w-2xl px-4 mb-10">
         <h2 class="text-4xl font-bold text-gray-900">Materiales de impresión</h2>
+        <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
         <p class="text-gray-700 mt-4">
           Descubre nuestra variedad de materiales para adaptarnos a cualquier tipo de impresión 3D, desde prototipos hasta piezas industriales.
         </p>
       </div>
   
       <!-- Pestañas -->
-      <div class="w-full px-4">
-        <div class="flex overflow-x-auto md:justify-center space-x-4 border-b border-gray-300 pb-2">
-          <button
-            v-for="(material, index) in materials"
-            :key="index"
-            @click="selectedIndex = index"
-            class="px-4 py-2 whitespace-nowrap border-b-4 transition-all duration-300"
-            :class="selectedIndex === index ? 'border-green-500 text-green-600 font-semibold' : 'border-transparent text-gray-600 hover:text-gray-900'"
-          >
-            {{ material.title }}
-          </button>
-        </div>
-  
-        <!-- Contenido de la pestaña seleccionada -->
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <!-- Texto -->
-          <div class="text-left px-4">
-            <h3 class="text-2xl font-semibold text-gray-900">{{ materials[selectedIndex].title }}</h3>
-            <p class="text-gray-700 mt-4">{{ materials[selectedIndex].description }}</p>
-          </div>
-  
-          <!-- Imagen -->
-          <div class="w-full flex justify-center p-2">
-            <img :src="materials[selectedIndex].image" :alt="materials[selectedIndex].title" class="w-124 h-auto object-cover rounded-lg shadow-lg" />
-          </div>
-        </div>
-      </div>
+<div class="w-full px-4">
+  <div class="flex overflow-x-auto md:justify-center space-x-4 border-b border-gray-300 pb-2 
+              scrollbar-hide scroll-smooth snap-x snap-mandatory">
+    <button
+      v-for="(material, index) in materials"
+      :key="index"
+      @click="selectedIndex = index"
+      class="px-4 py-2 border-b-4 transition-all duration-300 snap-start"
+      :class="selectedIndex === index 
+        ? 'border-green-500 text-green-600 font-semibold' 
+        : 'border-transparent text-gray-600 hover:text-gray-900'"
+    >
+      {{ material.title }}
+    </button>
+  </div>
+
+  <!-- Contenido de la pestaña seleccionada -->
+  <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <!-- Texto -->
+    <div class="text-left px-4">
+      <h3 class="text-2xl font-semibold text-gray-900">{{ materials[selectedIndex].title }}</h3>
+      <p class="bg-sky-200 text-gray-700 mt-4 p-4 rounded-xl">{{ materials[selectedIndex].description }}</p>
+    </div>
+
+    <!-- Imagen -->
+    <div class="w-full flex justify-center p-2">
+      <img :src="materials[selectedIndex].image" :alt="materials[selectedIndex].title" class="w-124 h-auto object-cover rounded-lg shadow-lg" />
+    </div>
+  </div>
+</div>
+
     </section>
   </template>
   

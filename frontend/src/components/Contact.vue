@@ -1,12 +1,12 @@
 <template>
-    <section id="partners" class="h-screen flex flex-col justify-center items-center relative p-16">
+    <section id="partners" class="h-screen flex flex-col relative p-5">
 
     <!-- Sección de Título y Descripción -->
     <div class="text-center mb-10">
       <h1 class="text-gray-900 text-4xl font-bold mb-4 relative">
         {{ $t("contact.title") }}
         <!-- Línea verde debajo del h1 -->
-        <span class="line"></span>
+        <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
       </h1>
       <p class="text-lg text-gray-900">
         Si les interesa saber algo mas, puede contactarnos completando el formulario
@@ -14,8 +14,8 @@
     </div>
 
     <!-- Formularios -->
-    <div class="text-center bg-white text-white w-full">
-      <form @submit.prevent="submitForm" class="flex flex-col space-y-4">
+    <div class="text-center bg-white text-white w-4/5 mx-auto">
+      <form @submit.prevent="submitForm" class="flex flex-col mx-auto space-y-4">
         <input 
           v-model="email" 
           type="email" 
