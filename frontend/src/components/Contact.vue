@@ -14,22 +14,22 @@
     </div>
 
     <!-- Formularios -->
-    <div class="text-center text-white w-full max-w-lg">
+    <div class="text-center bg-white text-white w-full">
       <form @submit.prevent="submitForm" class="flex flex-col space-y-4">
         <input 
           v-model="email" 
           type="email" 
           :placeholder="$t('contact.emailPlaceholder')" 
           required 
-          class="p-2 text-black border border-gray-300 rounded w-full"
+          class="p-2 bg-white text-black border border-gray-300 rounded w-full"
         />
         <textarea 
           v-model="message" 
           :placeholder="$t('contact.messagePlaceholder')" 
           required 
-          class="p-2 text-black border border-gray-300 rounded w-full h-32"
+          class="p-2 bg-white text-black border border-gray-300 rounded w-full h-32"
         ></textarea>
-        <button type="submit" class="bg-blue-500 text-white p-2 rounded w-full">
+        <button type="submit" class="bg-blue-800 text-white p-2 rounded w-full">
           {{ $t("contact.sendButton") }}
         </button>
       </form>
