@@ -11,10 +11,11 @@
         <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
       </h1>
       <p class="font-abel max-w-5xl text-xl text-gray-900">
-        Nuestro servicio de impresión 3D le ayudará a fabricar cualquier tipo de pieza en un plazo de entrega rápido. 
-        Dada la excelente calidad de nuestras impresoras, 
-        podemos cumplir con la entrega de piezas de la más alta calidad en cuestión de días. Ademas de contar con una 
-        amplia diversidad de materiales para trabajar.
+        En 3DIndustry, creemos que la mejor manera de demostrar nuestra capacidad es a través de nuestros trabajos.
+        Esta sección es una muestra de la diversidad de proyectos que hemos realizado, utilizando una amplia gama de materiales
+        y técnicas de impresión 3D. Desde prototipos funcionales hasta piezas finales de alta precisión,
+        cada proyecto refleja nuestro compromiso con la excelencia y la innovación.
+        Explora nuestra galería y descubre cómo podemos transformar tus ideas en realidad.
       </p>
     </div>
 
