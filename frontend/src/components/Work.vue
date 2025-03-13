@@ -1,16 +1,16 @@
 <template>
   <section
     id="work"
-    class="min-h-screen flex flex-col justify-center items-center p-5"
+    class=" flex flex-col justify-center items-center p-5 mb-20"
   >
     <!-- Sección de Título y Descripción -->
     <div class="text-center mb-10">
-      <h1 class="text-gray-900 text-4xl font-bold mb-4 relative">
+      <h1 class="font-abel text-gray-900 text-4xl font-bold mb-4 relative">
         Soluciones impresas en 3D
         <!-- Línea verde debajo del h1 -->
         <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
       </h1>
-      <p class="text-lg text-gray-900">
+      <p class="font-abel max-w-5xl text-xl text-gray-900">
         Nuestro servicio de impresión 3D le ayudará a fabricar cualquier tipo de pieza en un plazo de entrega rápido. 
         Dada la excelente calidad de nuestras impresoras, 
         podemos cumplir con la entrega de piezas de la más alta calidad en cuestión de días. Ademas de contar con una 
@@ -23,17 +23,17 @@
       <div
         v-for="(work, index) in workItems"
         :key="index"
-        class="bg-green-200 rounded-lg shadow-lg p-2 transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+        class="rounded-lg shadow-lg p-2 transform transition-transform duration-300 hover:scale-105 cursor-pointer"
         @click="openImage(work.image)"
       >
         <!-- Título de la tarjeta -->
-        <h3 class="text-lg font-semibold mt-4 text-gray-900">{{ work.title }}</h3>
+        <h3 class="font-abel text-2xl font-semibold mt-4 text-gray-900">{{ work.title }}</h3>
 
         <!-- Imagen de la tarjeta -->
         <img :src="work.image" :alt="work.title" class="w-full h-64 object-cover mt-4" />
 
         <!-- Descripción de la tarjeta -->
-        <p class="text-sm text-gray-700 p-2">{{ work.description }}</p>
+        <p class="font-abel text-xl text-gray-700 p-2">{{ work.description }}</p>
       </div>
     </div>
 
@@ -125,20 +125,11 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Estilos para el título y la descripción */
-h2 {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
 
 /* Estilo para las tarjetas */
 .card img {
   object-fit: cover;
   height: 200px;
-}
-
-.card p {
-  font-size: 0.9rem;
-  color: #666;
 }
 
 /* Modal para ver imagen */
@@ -149,16 +140,4 @@ h2 {
   right: 0;
   bottom: 0;
 }
-.line {
-  content: "";
-  display: block;
-  width: 10%; /* Configura el largo de la línea */
-  height: 4px; /* Grosor de la línea */
-  background-color: #28a745; /* Color verde */
-  position: absolute;
-  bottom: -15px; /* Ajusta la distancia entre el texto y la línea */
-  left: 50%; /* Establece la posición inicial en el centro */
-  transform: translateX(-50%); /* Desplaza la línea hacia la izquierda para centrarla */
-}
-
 </style>

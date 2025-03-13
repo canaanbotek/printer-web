@@ -1,17 +1,18 @@
 <template>
-    <section id="partners" class="h-screen flex flex-col relative p-5">
+    <section id="partners" class="flex flex-col relative items-center mb-20">
 
-    <!-- Sección de Título y Descripción -->
-    <div class="text-center mb-10">
-      <h1 class="text-gray-900 text-4xl font-bold mb-4 relative">
-        {{ $t("contact.title") }}
-        <!-- Línea verde debajo del h1 -->
+      <!-- Título y descripción -->
+      <div class="text-center max-w-5xl px-4 mb-10">
+        <h2 class="font-abel text-4xl font-bold text-gray-900">{{ $t("contact.title") }}</h2>
         <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
-      </h1>
-      <p class="text-lg text-gray-900">
-        Si les interesa saber algo mas, puede contactarnos completando el formulario
-      </p>
-    </div>
+        <p class="font-abel text-xl text-gray-700 mt-4">
+          ¿Listo para llevar tus proyectos industriales al siguiente nivel? En 3DIndustry, estamos ansiosos por
+        escuchar tus ideas y desafíos. Completa el formulario a continuación y un miembro de nuestro equipo se pondrá
+        en contacto a la brevedad. Ya sea porque necesites prototipos rápidos, piezas finales personalizadas o asesoramiento especial
+        en impresión 3D, estamos aquí para ayudarte a hacer realidad tus proyectos con precisión y eficiencia.
+        ¡Contáctanos hoy y descubre cómo podemos transformar tus conceptos en soluciones tangibles!
+        </p>
+      </div>
 
     <!-- Formularios -->
     <div class="text-center bg-white text-white w-4/5 mx-auto">
@@ -21,15 +22,15 @@
           type="email" 
           :placeholder="$t('contact.emailPlaceholder')" 
           required 
-          class="p-2 bg-white text-black border border-gray-300 rounded w-full"
+          class="font-abel p-2 bg-white text-black border border-gray-300 rounded w-full"
         />
         <textarea 
           v-model="message" 
           :placeholder="$t('contact.messagePlaceholder')" 
           required 
-          class="p-2 bg-white text-black border border-gray-300 rounded w-full h-32"
+          class="font-abel p-2 bg-white text-black border border-gray-300 rounded w-full h-32"
         ></textarea>
-        <button type="submit" class="bg-blue-800 text-white p-2 rounded w-full">
+        <button type="submit" class="font-abel bg-blue-800 text-white p-2 rounded w-full">
           {{ $t("contact.sendButton") }}
         </button>
       </form>
@@ -68,15 +69,5 @@ const submitForm = async () => {
 </script>
 
 <style>
-.line {
-  content: "";
-  display: block;
-  width: 10%; /* Configura el largo de la línea */
-  height: 4px; /* Grosor de la línea */
-  background-color: #28a745; /* Color verde */
-  position: absolute;
-  bottom: -15px; /* Ajusta la distancia entre el texto y la línea */
-  left: 50%; /* Establece la posición inicial en el centro */
-  transform: translateX(-50%); /* Desplaza la línea hacia la izquierda para centrarla */
-}
+
 </style>

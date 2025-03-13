@@ -1,9 +1,9 @@
 <template>
-  <section id="who-us" class="p-5 w-full py-20">
+  <section id="who-us" class="p-5 w-full mb-20">
     <div class="container mx-auto px-8 md:px-16">
       <!-- Título de la sección -->
       <div class="text-center mb-10">
-        <h2 class="text-gray-900 text-4xl font-bold mb-4 relative">
+        <h2 class="font-abel text-gray-900 text-4xl font-bold mb-4 relative">
           ¿Por qué elegirnos?
           <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
         </h2>
@@ -14,8 +14,8 @@
         <!-- Columna de texto -->
         <div class="space-y-8">
           <div v-for="(item, index) in reasons" :key="index">
-            <h3 class="text-2xl font-bold text-gray-900">{{ item.title }}</h3>
-            <p class="text-gray-700 mt-2">{{ item.description }}</p>
+            <h3 class="font-abel text-2xl font-bold text-gray-900">{{ item.title }}</h3>
+            <p class="font-abel text-xl text-gray-700 mt-2">{{ item.description }}</p>
           </div>
         </div>
 
@@ -48,15 +48,5 @@ const image = "/src/assets/why-us.png"
 </script>
   
 <style>
-.line {
-  content: "";
-  display: block;
-  width: 10%; /* Configura el largo de la línea */
-  height: 4px; /* Grosor de la línea */
-  background-color: #28a745; /* Color verde */
-  position: absolute;
-  bottom: -15px; /* Ajusta la distancia entre el texto y la línea */
-  left: 50%; /* Establece la posición inicial en el centro */
-  transform: translateX(-50%); /* Desplaza la línea hacia la izquierda para centrarla */
-}
+
 </style>

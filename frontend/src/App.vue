@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white w-full min-h-screen">
+  <div class="bg-white w-full ">
     <Navbar />
     <Home />
     <Work />

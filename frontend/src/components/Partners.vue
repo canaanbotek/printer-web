@@ -1,15 +1,22 @@
 <template>
-  <section id="partners" class="min-h-screen flex flex-col justify-center items-center relative p-5">
+  <section id="partners" class="flex flex-col justify-center items-center relative p-5 mb-20">
 
     <!-- Sección de Título y Descripción -->
     <div class="text-center mb-10">
-      <h1 class="text-gray-900 text-4xl font-bold mb-4 relative">
+      <h1 class="font-abel text-gray-900 text-4xl font-bold mb-4 relative">
         Empresas Colaboradoras
         <!-- Línea verde debajo del h1 -->
         <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
       </h1>
-      <p class="text-lg text-gray-900">
-        Colaboramos con varias empresas para ofrecerte los mejores productos y servicios de impresión 3D. Aquí puedes ver algunas de nuestras empresas asociadas.
+      <p class="font-abel text-xl max-w-5xl text-gray-900">
+        Detrás de cada pieza fabricada, hay una historia de colaboración y confianza.
+        Hemos tenido el privilegio de trabajar con empresas líderes en diversos sectores,
+        quienes depositaron su confianza en nuestra capacidad para transformar sus ideas en realidad.
+        Cada proyecto es un testimonio de nuestra dedicación a la precisión, la calidad y la innovación.
+        Nos enorgullece presentar a nuestros partners, empresas que han confiado en nosotros para superar desafíos
+        y alcanzar sus objetivos. Su éxito es nuestro éxito, y nos motiva a seguir elevando los estándares de la impresión
+        3D industrial. Únete a la lista de empresas que han encontrado en nosotros un aliado confiable para la manufactura
+        de piezas de alta calidad.
       </p>
     </div>
 
