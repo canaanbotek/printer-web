@@ -55,10 +55,20 @@
           <p class="text-sm text-gray-500 mt-1 text-left">{{ $t("contact.fileDescription") }} (Máx. {{ MAX_FILE_SIZE_MB }}MB)</p>
         </div>
       
-        <!-- Botón de submit -->
+        <!-- Botón de submit con carga -->
         <button type="submit" class="font-abel bg-blue-800 text-white p-2 rounded w-full">
-          {{ $t("contact.sendButton") }}
+          <!-- Condicional para mostrar el texto y el ícono de carga -->
+          <div v-if="isLoading" class="flex items-center justify-center text-white font-semibold">
+            <span class="flex items-center">
+              {{ $t("contact.sendLoadingButton") }}
+              <LoadingIcon class="animate-spin h-6 w-6 ml-2" />
+            </span>
+          </div>
+          <span v-else>
+            {{ $t("contact.sendButton") }}
+          </span>
         </button>
+
       </form>
     </div>
   </section>
@@ -67,6 +77,7 @@
 <script setup lang="ts">
 import { ref } from "vue"
 import { useI18n } from "vue-i18n"
+import LoadingIcon from '../assets/icons/LoadingIcon.vue'
 
 const MAX_FILE_SIZE_MB = 50 // Tamaño máximo del archivo
 const MAX_TEXT_LENGTH = 1000 // Tope de caracteres en el text-area
@@ -77,6 +88,7 @@ const message = ref("")
 const file = ref<File | null>(null)
 const fileSizeError = ref(false)
 const fileInput = ref(null)
+const isLoading = ref(false)
 
 
 // Manejo de carga de archivos
@@ -99,6 +111,7 @@ const handleFileUpload = (event: Event) => {
 };
 
 const submitForm = async () => {
+  isLoading.value = true
   try {
     const formData = new FormData();
     formData.append("email", email.value);
@@ -114,13 +127,16 @@ const submitForm = async () => {
 
     if (response.ok) {
       alert(t("contact.sendButton") + " ✅");
+      isLoading.value = false
       email.value = "";
       message.value = "";
       fileInput.value.value = ""
     } else {
+      isLoading.value = false
       alert("Error al enviar el mensaje ❌");
     }
   } catch (error) {
+    isLoading.value = false
     console.error("Error:", error);
     alert("No se pudo enviar el mensaje.");
   }

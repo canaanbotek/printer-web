@@ -19,6 +19,7 @@ const messages = {
       emailPlaceholder: "Your email",
       messagePlaceholder: "Your message",
       sendButton: "Send",
+      sendLoadingButton: "Sending...",
       emailDescription: "Enter a valid email address",
       messageDescription: "Tell us briefly about your needs",
       fileDescription: "Optional: Show us your model if you wish, to help us better!"
@@ -41,6 +42,7 @@ const messages = {
       emailPlaceholder: "Tu email",
       messagePlaceholder: "Tu consulta",
       sendButton: "Enviar",
+      sendLoadingButton: "Enviando...",
       emailDescription: "Ingresa un email válido",
       messageDescription: "Cuentanos en pocas palabras tus necesidades",
       fileDescription: "Opcional: Muestranos tu modelo si lo deseas para ayudarte mejor!"
