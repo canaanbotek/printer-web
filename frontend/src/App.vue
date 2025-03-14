@@ -1,14 +1,14 @@
 <template>
   <div class="bg-white w-full ">
     <Navbar />
-    <Home />
-    <Work />
-    <Materials />
-    <Printers />
-    <WhyUs />
-    <About />
-    <Partners />
-    <Contact />
+    <Home class="scroll-mt-20"/>
+    <Work class="scroll-mt-10"/>
+    <Materials class="scroll-mt-10"/>
+    <Printers class="scroll-mt-10"/>
+    <WhyUs class="scroll-mt-10"/>
+    <About class="scroll-mt-10"/>
+    <Partners class="scroll-mt-10"/>
+    <Contact class="scroll-mt-10"/>
     <Footer />
   </div>
 </template>
@@ -29,26 +29,6 @@ import WhyUs from "./components/WhyUs.vue";
 // Definir un ref tipado para la sección actual
 const currentSection = ref<string>("home");
 
-// Función para manejar el scroll y cambiar el fondo
-// const handleScroll = () => {
-//   const sections: string[] = ["home", "about", "work", "printers", "partners", "contact"];
-// 
-//   for (let i = 0; i < sections.length; i++) {
-//     const section = document.getElementById(sections[i]);
-//     if (!section) continue;
-// 
-//     const rect = section.getBoundingClientRect();
-//     if (rect.top <= 0 && rect.bottom >= 0) {
-//       currentSection.value = sections[i];
-//       document.body.style.backgroundColor = `hsl(${i * 60}, 70%, 50%)`;
-//     }
-//   }
-// };
-// 
-// // Agregar el evento de scroll cuando el componente se monta
-// onMounted(() => {
-//   window.addEventListener("scroll", handleScroll);
-// });
 </script>
 
 <style>

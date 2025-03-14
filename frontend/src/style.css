@@ -67,6 +67,13 @@ button:focus-visible {
   text-align: center;
 }
 
+@media (max-width: 915px) {
+  #app {
+    max-width: 100%;
+    padding: 0%;
+  }
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #c9caca;

@@ -38,10 +38,10 @@ import { ref, onMounted, onUnmounted } from "vue"
 
 // Lista de imágenes
 const images = ref([
-  "/src/assets/housing.jpeg",
+  "/src/assets/materials/pc-abs.jpg",
   "/src/assets/materials/tpu.jpg",
   "/src/assets/materials/asa.jpeg",
-  "/src/assets/materials/nylon.jpg",
+  "/src/assets/materials/pa-cf.jpg",
   "/src/assets/materials/fibra-de-carbono.jpeg"
 ])
 

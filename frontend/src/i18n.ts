@@ -7,6 +7,8 @@ const messages = {
       home: "Home",
       about: "About Us",
       work: "Our Work",
+      materials: "Materials",
+      whyus: "Why Us",
       printers: "Printers",
       partners: "Partners",
       contact: "Contact",
@@ -16,15 +18,20 @@ const messages = {
       title: "Contact",
       emailPlaceholder: "Your email",
       messagePlaceholder: "Your message",
-      sendButton: "Send"
+      sendButton: "Send",
+      emailDescription: "Enter a valid email address",
+      messageDescription: "Tell us briefly about your needs",
+      fileDescription: "Optional: Show us your model if you wish, to help us better!"
     }
   },
   es: {
     navbar: {
       home: "Inicio",
       about: "Sobre Nosotros",
+      materials: "Materiales",
       work: "Trabajos",
       printers: "Impresoras",
+      whyus: "Porqué nosotros",
       partners: "Colaboradores",
       contact: "Contacto",
       language: "Idioma"
@@ -33,7 +40,10 @@ const messages = {
       title: "Contacto",
       emailPlaceholder: "Tu email",
       messagePlaceholder: "Tu consulta",
-      sendButton: "Enviar"
+      sendButton: "Enviar",
+      emailDescription: "Ingresa un email válido",
+      messageDescription: "Cuentanos en pocas palabras tus necesidades",
+      fileDescription: "Opcional: Muestranos tu modelo si lo deseas para ayudarte mejor!"
     }
   }
 }

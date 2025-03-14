@@ -1,35 +1,60 @@
 <template>
-    <section id="partners" class="flex flex-col relative items-center mb-20">
-
-      <!-- Título y descripción -->
-      <div class="text-center max-w-5xl px-4 mb-10">
-        <h2 class="font-abel text-4xl font-bold text-gray-900">{{ $t("contact.title") }}</h2>
-        <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
-        <p class="font-abel text-xl text-gray-700 mt-4">
-          ¿Listo para llevar tus proyectos industriales al siguiente nivel? En 3DIndustry, estamos ansiosos por
+  <section id="contact" class="flex flex-col relative items-center mb-20">
+    <!-- Título y descripción -->
+    <div class="text-center max-w-5xl px-4 mb-10">
+      <h2 class="font-abel text-4xl font-bold text-gray-900">{{ $t("contact.title") }}</h2>
+      <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
+      <p class="font-abel text-xl text-gray-700 mt-4">
+        ¿Listo para llevar tus proyectos industriales al siguiente nivel? En 3DIndustry, estamos ansiosos por
         escuchar tus ideas y desafíos. Completa el formulario a continuación y un miembro de nuestro equipo se pondrá
         en contacto a la brevedad. Ya sea porque necesites prototipos rápidos, piezas finales personalizadas o asesoramiento especial
         en impresión 3D, estamos aquí para ayudarte a hacer realidad tus proyectos con precisión y eficiencia.
         ¡Contáctanos hoy y descubre cómo podemos transformar tus conceptos en soluciones tangibles!
-        </p>
-      </div>
+      </p>
+    </div>
 
-    <!-- Formularios -->
+    <!-- Formulario -->
     <div class="text-center bg-white text-white w-4/5 mx-auto">
       <form @submit.prevent="submitForm" class="flex flex-col mx-auto space-y-4">
-        <input 
-          v-model="email" 
-          type="email" 
-          :placeholder="$t('contact.emailPlaceholder')" 
-          required 
-          class="font-abel p-2 bg-white text-black border border-gray-300 rounded w-full"
-        />
-        <textarea 
-          v-model="message" 
-          :placeholder="$t('contact.messagePlaceholder')" 
-          required 
-          class="font-abel p-2 bg-white text-black border border-gray-300 rounded w-full h-32"
-        ></textarea>
+
+        <!-- Campo de Email -->
+        <div class="w-full">
+          <input 
+            v-model="email" 
+            type="email" 
+            :placeholder="$t('contact.emailPlaceholder')" 
+            required 
+            class="font-abel p-2 bg-white text-black border border-gray-300 rounded w-full"
+          />
+          <p class="text-left italic text-sm text-gray-500 mt-1">{{ $t("contact.emailDescription") }}</p>
+        </div>
+      
+        <!-- Campo de Mensaje -->
+        <div class="w-full">
+          <textarea 
+            v-model="message" 
+            :placeholder="$t('contact.messagePlaceholder')" 
+            required
+            maxlength="1000"
+            class="font-abel p-2 bg-white text-black border border-gray-300 rounded w-full h-32"
+          ></textarea>
+          <p class="text-left italic text-sm text-gray-500 mt-1">{{ $t("contact.messageDescription") }} ({{ message.length }}/{{ MAX_TEXT_LENGTH }})</p>
+        </div>
+      
+        <!-- Campo de Archivo con límite de tamaño -->
+        <div class="w-full">
+          <input 
+            type="file"
+            @change="handleFileUpload" 
+            class="font-abel p-2 bg-white text-black border border-gray-300 rounded w-full"
+          />
+          <p v-if="fileSizeError" class="text-sm text-red-500 mt-1 text-left">
+            {{ $t("contact.fileSizeError") }}
+          </p>
+          <p class="text-sm text-gray-500 mt-1 text-left">{{ $t("contact.fileDescription") }} (Máx. {{ MAX_FILE_SIZE_MB }}MB)</p>
+        </div>
+      
+        <!-- Botón de submit -->
         <button type="submit" class="font-abel bg-blue-800 text-white p-2 rounded w-full">
           {{ $t("contact.sendButton") }}
         </button>
@@ -39,25 +64,57 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { useI18n } from "vue-i18n";
+import { ref } from "vue"
+import { useI18n } from "vue-i18n"
 
-const { t } = useI18n();
-const email = ref("");
-const message = ref("");
+const MAX_FILE_SIZE_MB = 50 // Tamaño máximo del archivo
+const MAX_TEXT_LENGTH = 1000 // Tope de caracteres en el text-area
+
+const { t } = useI18n()
+const email = ref("")
+const message = ref("")
+const file = ref<File | null>(null)
+const fileSizeError = ref(false)
+
+
+// Manejo de carga de archivos
+const handleFileUpload = (event: Event) => {
+  const input = event.target as HTMLInputElement;
+
+  if (input.files && input.files[0]) {
+    const selectedFile = input.files[0];
+    console.log("Este es el archivo:", selectedFile);
+
+    // Verifica el tamaño del archivo
+    if (selectedFile.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
+      fileSizeError.value = true;  // Muestra error si el tamaño excede el límite
+      file.value = null;
+    } else {
+      file.value = selectedFile;
+      fileSizeError.value = false;  // Restablecer el error si el archivo es válido
+    }
+  }
+};
 
 const submitForm = async () => {
   try {
+    const formData = new FormData();
+    formData.append("email", email.value);
+    formData.append("message", message.value);
+    if (file.value) {
+      formData.append("file", file.value);
+    }
+
     const response = await fetch("http://localhost:3000/send-email", {
       method: "POST",
-      body: JSON.stringify({ email: email.value, message: message.value }),
-      headers: { "Content-Type": "application/json" },
+      body: formData,
     });
 
     if (response.ok) {
       alert(t("contact.sendButton") + " ✅");
       email.value = "";
       message.value = "";
+      file.value = null;
     } else {
       alert("Error al enviar el mensaje ❌");
     }
@@ -67,7 +124,3 @@ const submitForm = async () => {
   }
 };
 </script>
-
-<style>
-
-</style>

@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 node_modules/\ndist/\n.yarn/\n.vscode/\n.env
+
+/backend/.env
+.env

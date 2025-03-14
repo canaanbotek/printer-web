@@ -1,5 +1,5 @@
 <template>
-  <section id="who-us" class="p-5 w-full mb-20">
+  <section id="whyus" class="p-5 w-full mb-20">
     <div class="container mx-auto px-8 md:px-16">
       <!-- Título de la sección -->
       <div class="text-center mb-10">
