@@ -43,7 +43,8 @@
       
         <!-- Campo de Archivo con límite de tamaño -->
         <div class="w-full">
-          <input 
+          <input
+            ref="fileInput"
             type="file"
             @change="handleFileUpload" 
             class="font-abel p-2 bg-white text-black border border-gray-300 rounded w-full"
@@ -75,6 +76,7 @@ const email = ref("")
 const message = ref("")
 const file = ref<File | null>(null)
 const fileSizeError = ref(false)
+const fileInput = ref(null)
 
 
 // Manejo de carga de archivos
@@ -114,7 +116,7 @@ const submitForm = async () => {
       alert(t("contact.sendButton") + " ✅");
       email.value = "";
       message.value = "";
-      file.value = null;
+      fileInput.value.value = ""
     } else {
       alert("Error al enviar el mensaje ❌");
     }
