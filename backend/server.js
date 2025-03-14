@@ -29,6 +29,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post("/send-email", upload.single("file"), (req, res) => {
+  console.log("Se ha recibido una nueva petición");
   const { email, message } = req.body;
   const file = req.file;
 
@@ -63,9 +64,12 @@ app.post("/send-email", upload.single("file"), (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error(error);
+      console.log("Error al enviar correo");
       return res.status(500).send("Error en el envío");
+      
     }
     res.status(200).send("Correo enviado");
+    console.log("Correo enviado con éxito");
   });
 });
 
