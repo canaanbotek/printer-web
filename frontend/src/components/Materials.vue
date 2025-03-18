@@ -2,7 +2,7 @@
     <section id="materials" class="flex flex-col items-center p-5 w-full mb-10">
       <!-- Título y descripción -->
       <div class="text-center max-w-5xl px-4 mb-10">
-        <h2 class="font-abel text-4xl font-bold text-gray-900">{{ $t("materials.title") }}</h2>
+        <h1 class="font-abel text-4xl font-bold text-gray-900">{{ $t("materials.title") }}</h1>
         <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
         <p class="font-abel text-xl text-gray-700 mt-4">
           {{ $t("materials.description") }}
