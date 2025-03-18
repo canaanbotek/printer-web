@@ -3,10 +3,10 @@
     <div class="container mx-auto px-8 md:px-16">
       <!-- Título de la sección -->
       <div class="text-center mb-10">
-        <h2 class="font-abel text-gray-900 text-4xl font-bold mb-4 relative">
-          ¿Por qué elegirnos?
+        <h1 class="font-abel text-gray-900 text-4xl font-bold mb-4 relative">
+          {{ $t("whyus.title") }}
           <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
-        </h2>
+        </h1>
       </div>
 
       <!-- Contenido de la sección -->
@@ -14,8 +14,8 @@
         <!-- Columna de texto -->
         <div class="space-y-8">
           <div v-for="(item, index) in reasons" :key="index">
-            <h3 class="font-abel text-2xl font-bold text-gray-900">{{ item.title }}</h3>
-            <p class="font-abel text-xl text-gray-700 mt-2">{{ item.description }}</p>
+            <h3 class="font-abel text-2xl font-bold text-gray-900">{{ t(`whyus.${reasons[index].keyTitle}`) }}</h3>
+            <p class="font-abel text-xl text-gray-700 mt-2">{{ t(`whyus.${reasons[index].keyDescription}`) }}</p>
           </div>
         </div>
 
@@ -29,18 +29,21 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from "vue-i18n"
+
+const { t } = useI18n()
 const reasons = [
   {
-    title: "Calidad Garantizada",
-    description: "Dada la gran diponibilidad de materiales y la tecnología de impresión avanzada que empleamos, nuestro equipo de ingenieros ofrece la mejor colaboracion para optimizar la fabricación de piezas que mejor se ajuste a las necesidades especificas de su aplicación permitiendo lograr resultados de alta precisión."
+    keyTitle: "titleOne",
+    keyDescription: "descriptionOne"
   },
   {
-    title: "Rapidez y Eficiencia",
-    description: "Nuestro proceso optimizado y las capacidades de nuestros equipos nos permite entregar piezas en tiempo récord sin comprometer la calidad."
+    keyTitle: "titleTwo",
+    keyDescription: "descriptionTwo"
   },
   {
-    title: "Experiencia y Profesionalismo",
-    description: "Contamos con un equipo de ingenieros expertos en impresión 3D y diseño industrial para brindarte la mejor asesoría."
+    keyTitle: "titleThree",
+    keyDescription: "descriptionThree"
   }
 ];
 

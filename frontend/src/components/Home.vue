@@ -3,13 +3,13 @@
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center justify-between px-8 gap-8">
       <!-- Sección de texto -->
       <div class="text-left max-w-lg mb-8 md:mb-0">
-        <h1 class="text-gray-900 font-abel text-4xl font-bold mb-4 relative">
-          Servicios de impresión para componentes personalizados
+        <h1 class="font-abel text-gray-900 text-4xl font-bold mb-4 relative">
+          {{ $t("home.title") }}
           <!-- Línea verde debajo del h1 -->
           <span class="block w-1/2 h-1 bg-green-500 mx-auto mt-2"></span>
         </h1>
         <p class="font-abel text-gray-900 text-2xl bg-slate-300 bg-opacity-50 p-4 rounded-lg">
-          Vemos su diseño y obtenga sus piezas con la mejor calidad y en tiempo récord con nosotros!
+          {{ $t("home.description") }}
         </p>
       </div>
 
@@ -35,6 +35,9 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue"
+import { useI18n } from "vue-i18n"
+
+const { t } = useI18n()
 
 // Lista de imágenes
 const images = ref([

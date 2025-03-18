@@ -10,9 +10,9 @@
 
       <!-- Links importantes -->
       <div class="flex flex-wrap justify-center space-x-6 text-sm mb-4 md:mb-0">
-        <a href="/politicas-de-privacidad" class="hover:underline">Política de Privacidad</a>
-        <a href="/terminos-y-condiciones" class="hover:underline">Términos y Condiciones</a>
-        <a href="/contacto" class="hover:underline">Contacto</a>
+        <a href="/politicas-de-privacidad" class="hover:underline">{{ $t("footer.privacy") }}</a>
+        <a href="/terminos-y-condiciones" class="hover:underline">{{ $t("footer.terms") }}</a>
+        <a href="/contacto" class="hover:underline">{{ $t("footer.contact") }}</a>
       </div>
 
       <!-- Powered by -->
@@ -31,7 +31,7 @@
 
     <!-- Derechos de Autor -->
     <div class="text-center text-xs opacity-75 mt-4">
-      &copy; {{ new Date().getFullYear() }} 3DIndustry. Todos los derechos reservados.
+      &copy; {{ new Date().getFullYear() }} {{ $t("footer.reserved") }}
     </div>
   </footer>
 </template>
@@ -39,6 +39,9 @@
 <script setup lang="ts">
 import { h } from "vue";
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-vue-next";
+import { useI18n } from "vue-i18n"
+
+const { t } = useI18n()
 
 const socialLinks = [
   { icon: h(Facebook), url: "https://facebook.com" },

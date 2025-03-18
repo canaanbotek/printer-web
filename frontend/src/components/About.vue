@@ -6,15 +6,11 @@
     <!-- Sección de título y descripción -->
     <div class="text-center mb-10">
       <h1 class="font-abel text-gray-900 text-4xl font-bold mb-4 relative">
-        Nuestro Equipo
+        {{ $t("about.title") }}
         <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
       </h1>
       <p class="font-abel text-xl text-gray-900">
-        Somos un equipo de ingenieros electrónicos con experiencia en la industria,
-        apasionados por la impresión 3D y comprometidos con la excelencia.
-        Contamos con un amplio criterio y determinación para abordar cualquier
-        necesidad, garantizando soluciones innovadoras y de alta calidad para cada
-        proyecto.
+        {{ $t("about.description") }}
       </p>
     </div>
 
@@ -25,30 +21,34 @@
         :key="index"
         class="bg-white rounded-lg shadow-lg p-4 transform transition-transform duration-300 hover:scale-105 cursor-pointer"
       >
-        <img :src="member.image" :alt="member.name" class="w-48 h-48 mx-auto rounded-full object-cover shadow-md" />
-        <h3 class="font-abel text-2xl font-semibold mt-4 text-gray-900">{{ member.name }}</h3>
-        <p class="font-abel text-xl text-gray-600 mt-2">{{ member.description }}</p>
+        <img :src="member.image" class="w-48 h-48 mx-auto rounded-full object-cover shadow-md" />
+        <h3 class="font-abel text-2xl font-semibold mt-4 text-gray-900">{{ t(`about.${teamMembers[index].keyTitle}`) }}</h3>
+        <p class="font-abel text-xl text-gray-600 mt-2">{{ t(`about.${teamMembers[index].keyDescription}`) }}</p>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from "vue-i18n"
+
+const { t } = useI18n()
+
 const teamMembers = [
-  { 
-    name: "Federico Delgado",
+  {
+    keyTitle: "aboutNameOne",
     image: "/src/assets/team/member1.jpg",
-    description: "Especialista en modelado e impresión 3D. Innovador y perfeccionista en cada proyecto."
+    keyDescription: "aboutDescriptionOne"
   },
-  { 
-    name: "Pedro Rosito",
+  {
+    keyTitle: "aboutNameTwo",
     image: "/src/assets/team/member2.jpg",
-    description: "Encargado de logística y calidad. Se asegura de que todo llegue en perfectas condiciones."
+    keyDescription: "aboutDescriptionTwo"
   },
-  { 
-    name: "Christian Canaan",
+  {
+    keyTitle: "aboutNameThree",
     image: "/src/assets/team/member3.jpg",
-    description: "Atención al cliente y soporte técnico. Siempre listo para resolver tus dudas."
+    keyDescription: "aboutDescriptionThree"
   }
 ];
 </script>

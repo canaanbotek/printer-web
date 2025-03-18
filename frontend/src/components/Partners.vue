@@ -4,19 +4,12 @@
     <!-- Sección de Título y Descripción -->
     <div class="text-center mb-10">
       <h1 class="font-abel text-gray-900 text-4xl font-bold mb-4 relative">
-        Empresas Colaboradoras
+        {{ $t("partners.title") }}
         <!-- Línea verde debajo del h1 -->
         <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
       </h1>
       <p class="font-abel text-xl max-w-5xl text-gray-900">
-        Detrás de cada pieza fabricada, hay una historia de colaboración y confianza.
-        Hemos tenido el privilegio de trabajar con empresas líderes en diversos sectores,
-        quienes depositaron su confianza en nuestra capacidad para transformar sus ideas en realidad.
-        Cada proyecto es un testimonio de nuestra dedicación a la precisión, la calidad y la innovación.
-        Nos enorgullece presentar a nuestros partners, empresas que han confiado en nosotros para superar desafíos
-        y alcanzar sus objetivos. Su éxito es nuestro éxito, y nos motiva a seguir elevando los estándares de la impresión
-        3D industrial. Únete a la lista de empresas que han encontrado en nosotros un aliado confiable para la manufactura
-        de piezas de alta calidad.
+        {{ $t("partners.description") }}
       </p>
     </div>
 
@@ -40,6 +33,9 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from "vue-i18n"
+const { t } = useI18n()
+
 const logos = [
   { src: 'src/assets/logo1.png', alt: 'Empresa 1', url: 'https://empresa1.com' },
   { src: 'src/assets/logo2.png', alt: 'Empresa 2', url: 'https://empresa2.com' },

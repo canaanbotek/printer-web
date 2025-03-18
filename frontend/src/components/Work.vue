@@ -6,16 +6,12 @@
     <!-- Sección de Título y Descripción -->
     <div class="text-center mb-10">
       <h1 class="font-abel text-gray-900 text-4xl font-bold mb-4 relative">
-        Soluciones impresas en 3D
+        {{ $t("work.title") }}
         <!-- Línea verde debajo del h1 -->
         <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
       </h1>
       <p class="font-abel max-w-5xl text-xl text-gray-900">
-        En 3DIndustry, creemos que la mejor manera de demostrar nuestra capacidad es a través de nuestros trabajos.
-        Esta sección es una muestra de la diversidad de proyectos que hemos realizado, utilizando una amplia gama de materiales
-        y técnicas de impresión 3D. Desde prototipos funcionales hasta piezas finales de alta precisión,
-        cada proyecto refleja nuestro compromiso con la excelencia y la innovación.
-        Explora nuestra galería y descubre cómo podemos transformar tus ideas en realidad.
+        {{ $t("work.description") }}
       </p>
     </div>
 
@@ -28,15 +24,16 @@
         @click="openImage(work.image)"
       >
         <!-- Título de la tarjeta -->
-        <h3 class="font-abel text-2xl font-semibold mt-4 text-gray-900">{{ work.title }}</h3>
+        <h3 class="font-abel text-2xl font-semibold mt-4 text-gray-900">{{ t(`work.${work.key}Title`) }}</h3>
 
         <!-- Imagen de la tarjeta -->
-        <img :src="work.image" :alt="work.title" class="w-full h-64 object-cover mt-4" />
+        <img :src="work.image" :alt="t(`work.${work.key}Title`)" class="w-full h-64 object-cover mt-4" />
 
         <!-- Descripción de la tarjeta -->
-        <p class="font-abel text-xl text-gray-700 p-2">{{ work.description }}</p>
+        <p class="font-abel text-xl text-gray-700 p-2">{{ t(`work.${work.key}Description`) }}</p>
       </div>
     </div>
+
 
     <!-- Modal para ver imagen en grande -->
     <div v-if="selectedImage" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center p-4" @click="closeImage">
@@ -50,53 +47,20 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const workItems = [
-  {
-    title: "PC-ABS",
-    image: "/src/assets/housing.jpeg",
-    description: "Este es un ejemplo de housing personalizado, ideal para componentes electrónicos."
-  },
-  {
-    title: "PLA",
-    image: "/src/assets/lamp.jpeg",
-    description: "Lámpara de diseño único, perfecta para ambientes modernos."
-  },
-  {
-    title: "PLA-ESPECIALS",
-    image: "/src/assets/macetas.jpeg",
-    description: "Macetas personalizadas para decoración de interiores y exteriores."
-  },
-  {
-    title: "ABS",
-    image: "/src/assets/housing.jpeg",
-    description: "Soportes para una variedad de dispositivos, desde cámaras hasta antenas."
-  },
-  {
-    title: "TPU",
-    image: "/src/assets/housing.jpeg",
-    description: "Elementos decorativos únicos creados con materiales de alta calidad."
-  },
-  {
-    title: "Nylon",
-    image: "/src/assets/housing.jpeg",
-    description: "Prototipos funcionales diseñados para pruebas y demostraciones."
-  },
-  {
-    title: "PET-CF",
-    image: "/src/assets/housing.jpeg",
-    description: "Módulos modulares que se adaptan a diferentes tipos de proyectos."
-  },
-  {
-    title: "ASA",
-    image: "/src/assets/housing.jpeg",
-    description: "Caja de herramientas personalizada para uso profesional o doméstico."
-  },
-  {
-    title: "PETG",
-    image: "/src/assets/housing.jpeg",
-    description: "Estuche a medida para proteger componentes electrónicos sensibles."
-  }
+  { key: "pcbAbs", image: "/src/assets/housing.jpeg" },
+  { key: "pla", image: "/src/assets/lamp.jpeg" },
+  { key: "plaEspecial", image: "/src/assets/macetas.jpeg" },
+  { key: "abs", image: "/src/assets/housing.jpeg" },
+  { key: "tpu", image: "/src/assets/housing.jpeg" },
+  { key: "nylon", image: "/src/assets/housing.jpeg" },
+  { key: "petCf", image: "/src/assets/housing.jpeg" },
+  { key: "asa", image: "/src/assets/housing.jpeg" },
+  { key: "petg", image: "/src/assets/housing.jpeg" }
 ];
 
 const selectedImage = ref<string | null>(null);

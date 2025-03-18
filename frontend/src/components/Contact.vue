@@ -5,11 +5,7 @@
       <h2 class="font-abel text-4xl font-bold text-gray-900">{{ $t("contact.title") }}</h2>
       <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
       <p class="font-abel text-xl text-gray-700 mt-4">
-        ¿Listo para llevar tus proyectos industriales al siguiente nivel? En 3DIndustry, estamos ansiosos por
-        escuchar tus ideas y desafíos. Completa el formulario a continuación y un miembro de nuestro equipo se pondrá
-        en contacto a la brevedad. Ya sea porque necesites prototipos rápidos, piezas finales personalizadas o asesoramiento especial
-        en impresión 3D, estamos aquí para ayudarte a hacer realidad tus proyectos con precisión y eficiencia.
-        ¡Contáctanos hoy y descubre cómo podemos transformar tus conceptos en soluciones tangibles!
+        {{ $t("contact.description") }}
       </p>
     </div>
 
