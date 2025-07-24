@@ -81,15 +81,15 @@ import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
 const workItems = [
-  { key: "pcbAbs", image: "/src/assets/housing.jpeg" },
-  { key: "pla", image: "/src/assets/lamp.jpeg" },
-  { key: "plaEspecial", image: "/src/assets/macetas.jpeg" },
-  { key: "abs", image: "/src/assets/housing.jpeg" },
-  { key: "tpu", image: "/src/assets/housing.jpeg" },
-  { key: "nylon", image: "/src/assets/housing.jpeg" },
-  { key: "petCf", image: "/src/assets/housing.jpeg" },
-  { key: "asa", image: "/src/assets/housing.jpeg" },
-  { key: "petg", image: "/src/assets/housing.jpeg" }
+  { key: "pcbAbs", image: "/src/assets/pics/pc_abs_work.jpeg" },
+  { key: "pla", image: "/src/assets/pics/hinge_4.jpeg" },
+  { key: "plaEspecial", image: "/src/assets/pics/macetas_1.jpeg" },
+  { key: "abs", image: "/src/assets/pics/housing.jpeg" },
+  { key: "tpu", image: "/src/assets/pics/housing.jpeg" },
+  { key: "nylon", image: "/src/assets/pics/housing.jpeg" },
+  { key: "petCf", image: "/src/assets/pics/housing.jpeg" },
+  { key: "asa", image: "/src/assets/pics/housing.jpeg" },
+  { key: "petg", image: "/src/assets/pics/housing.jpeg" }
 ];
 
 const selectedImage = ref<string | null>(null);

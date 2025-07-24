@@ -90,7 +90,7 @@
     {
       name: "TPU",
       key: "tpu",
-      image: "/src/assets/materials/tpu.jpg"
+      image: "/src/assets/materials/tpu_material.png"
     },
     {
       name: "ASA",

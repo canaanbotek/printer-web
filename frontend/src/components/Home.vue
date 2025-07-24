@@ -41,11 +41,11 @@ const { t } = useI18n()
 
 // Lista de imágenes
 const images = ref([
-  "/src/assets/materials/pc-abs.jpg",
-  "/src/assets/materials/tpu.jpg",
-  "/src/assets/materials/asa.jpeg",
-  "/src/assets/materials/pa-cf.jpg",
-  "/src/assets/materials/fibra-de-carbono.jpeg"
+  "/src/assets/materials/PC-ABS.png",
+  "/src/assets/materials/TPU.jpg",
+  "/src/assets/materials/ABS_piece.jpeg",
+  "/src/assets/materials/PA-CF.jpg",
+  "/src/assets/materials/PET-CF.jpg"
 ])
 
 const currentImage = ref(0)

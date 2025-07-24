@@ -19,10 +19,10 @@ const messages = {
       description: "We make your models a reality, we see your design and get your pieces with the best quality with us."
     },
     work: {
-      title: "3D printed solutions",
+      title: "Some works",
       description: "At 3DIndustry, we believe the best way to demonstrate our capabilities is through our work. This section showcases the diverse range of projects we've completed, utilizing a wide range of materials and 3D printing techniques. From functional prototypes to high-precision finished parts, each project reflects our commitment to excellence and innovation. Explore our gallery and discover how we can transform your ideas into reality.",
       pcbAbsTitle: "PC-ABS",
-      pcbAbsDescription: "This is a customized housing example, ideal for electronic components.",
+      pcbAbsDescription: "This is a customized housing for electronic components.",
       plaTitle: "PLA",
       plaDescription: "Unique design lamp, perfect for modern spaces.",
       plaEspecialTitle: "PLA-SPECIALS",
@@ -128,10 +128,10 @@ const messages = {
       description: "Volvemos realidad tus modelos, vemos su diseño y obtenga sus piezas con la mejor calidad con nosotros"
     },
     work: {
-      title: "Soluciones de impresión 3D",
+      title: "Algunos trabajos",
       description: "En 3DIndustry, creemos que la mejor manera de demostrar nuestra capacidad es a través de nuestros trabajos. Esta sección es una muestra de la diversidad de proyectos que hemos realizado, utilizando una amplia gama de materiales y técnicas de impresión 3D. Desde prototipos funcionales hasta piezas finales de alta precisión, cada proyecto refleja nuestro compromiso con la excelencia y la innovación. Explora nuestra galería y descubre cómo podemos transformar tus ideas en realidad.",
       pcbAbsTitle: "PC-ABS",
-      pcbAbsDescription: "Este es un ejemplo de housing personalizado, ideal para componentes electrónicos.",
+      pcbAbsDescription: "Este es un ejemplo de housing para componentes electrónicos.",
       plaTitle: "PLA",
       plaDescription: "Lámpara de diseño único, perfecta para ambientes modernos.",
       plaEspecialTitle: "PLA-ESPECIALES",
