@@ -2,10 +2,10 @@
   <div class="bg-white w-full ">
     <Navbar />
     <Home class="scroll-mt-20"/>
-    <Work class="scroll-mt-10"/>
     <Materials class="scroll-mt-10"/>
     <Printers class="scroll-mt-10"/>
     <WhyUs class="scroll-mt-10"/>
+    <Work class="scroll-mt-10"/>
     <About class="scroll-mt-10"/>
     <Partners class="scroll-mt-10"/>
     <Contact class="scroll-mt-10"/>

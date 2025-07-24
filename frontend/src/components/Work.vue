@@ -1,8 +1,6 @@
 <template>
-  <section
-    id="work"
-    class=" flex flex-col justify-center items-center p-5 mb-20"
-  >
+  <section id="work" class="flex flex-col items-center py-20 text-center">
+    
     <!-- Sección de Título y Descripción -->
     <div class="text-center mb-10">
       <h1 class="font-abel text-gray-900 text-4xl font-bold mb-4 relative">
@@ -15,39 +13,70 @@
       </p>
     </div>
 
-    <!-- Contenedor de Tarjetas -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-8 max-w-6xl px-4">
-      <div
-        v-for="(work, index) in workItems"
-        :key="index"
-        class="rounded-lg shadow-lg p-2 transform transition-transform duration-300 hover:scale-105 cursor-pointer"
-        @click="openImage(work.image)"
+    <div class="w-full mt-10">
+      <Swiper
+        :slides-per-view="1"
+        :space-between="20"
+        :loop="true"
+        :autoplay="{ delay: 3000 }"
+        :navigation="true"
+        :pagination="{ clickable: true }"
+        :breakpoints="{
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 }
+        }"
+        class="max-w-6xl w-full"
       >
-        <!-- Título de la tarjeta -->
-        <h3 class="font-abel text-2xl font-semibold mt-4 text-gray-900">{{ t(`work.${work.key}Title`) }}</h3>
-
-        <!-- Imagen de la tarjeta -->
-        <img :src="work.image" :alt="t(`work.${work.key}Title`)" class="w-full h-64 object-cover mt-4" />
-
-        <!-- Descripción de la tarjeta -->
-        <p class="font-abel text-xl text-gray-700 p-2">{{ t(`work.${work.key}Description`) }}</p>
-      </div>
+        <SwiperSlide
+          v-for="(work, index) in workItems"
+          :key="index"
+          class="rounded-lg shadow-lg p-2 cursor-pointer"
+          @click="openImage(work.image)"
+        >
+          <h3 class="font-abel text-2xl font-semibold mt-4 text-gray-900">
+            {{ t(`work.${work.key}Title`) }}
+          </h3>
+          <img
+            :src="work.image"
+            :alt="t(`work.${work.key}Title`)"
+            class="w-full h-64 object-cover mt-4 rounded-md"
+          />
+          <p class="font-abel text-xl text-gray-700 p-2">
+            {{ t(`work.${work.key}Description`) }}
+          </p>
+        </SwiperSlide>
+      </Swiper>
     </div>
 
-
-    <!-- Modal para ver imagen en grande -->
-    <div v-if="selectedImage" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center p-4" @click="closeImage">
-      <div class="relative">
-        <img :src="selectedImage" class="max-w-full max-h-screen rounded-lg shadow-lg" @click.stop />
-        <button class="absolute top-2 right-2 text-white text-3xl font-bold" @click="closeImage">&times;</button>
+    <!-- Modal para vista ampliada -->
+    <div
+      v-if="selectedImage"
+      class="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+      @click.self="closeImage"
+    >
+      <div class="relative max-w-4xl w-full px-4">
+        <img :src="selectedImage" alt="Ampliado" class="w-full rounded shadow-xl" />
+        <button
+          class="absolute top-2 right-2 bg-white rounded-full p-2 shadow"
+          @click="closeImage"
+        >
+          ✕
+        </button>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
-import { useI18n } from "vue-i18n";
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
+
+import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
 
@@ -64,45 +93,17 @@ const workItems = [
 ];
 
 const selectedImage = ref<string | null>(null);
-
-const openImage = (image: string) => {
-  selectedImage.value = image;
-};
-
-const closeImage = () => {
-  selectedImage.value = null;
-};
-
-// Cerrar con tecla ESC
-const handleKeydown = (event: KeyboardEvent) => {
-  if (event.key === "Escape") {
-    closeImage();
-  }
-};
-
-onMounted(() => {
-  window.addEventListener("keydown", handleKeydown);
-});
-
-onUnmounted(() => {
-  window.removeEventListener("keydown", handleKeydown);
-});
+const openImage = (image: string) => selectedImage.value = image;
+const closeImage = () => selectedImage.value = null;
 </script>
 
 <style scoped>
-
-/* Estilo para las tarjetas */
-.card img {
-  object-fit: cover;
-  height: 200px;
+.swiper-button-next,
+.swiper-button-prev {
+  color: #10b981; /* verde tailwind */
 }
 
-/* Modal para ver imagen */
-.fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.swiper-pagination-bullet {
+  background: #10b981;
 }
 </style>

@@ -10,10 +10,10 @@
       <!-- Menú -->
       <ul class="hidden xl:flex space-x-6">
         <li><a href="#home" class="hover:text-gray-400">{{ $t("navbar.home") }}</a></li>
-        <li><a href="#work" class="hover:text-gray-400">{{ $t("navbar.work") }}</a></li>
         <li><a href="#materials" class="hover:text-gray-400">{{ $t("navbar.materials") }}</a></li>
         <li><a href="#printers" class="hover:text-gray-400">{{ $t("navbar.printers") }}</a></li>
         <li><a href="#whyus" class="hover:text-gray-400">{{ $t("navbar.whyus") }}</a></li>
+        <li><a href="#work" class="hover:text-gray-400">{{ $t("navbar.work") }}</a></li>
         <li><a href="#about" class="hover:text-gray-400">{{ $t("navbar.about") }}</a></li>
         <li><a href="#partners" class="hover:text-gray-400">{{ $t("navbar.partners") }}</a></li>
         <li><a href="#contact" class="hover:text-gray-400">{{ $t("navbar.contact") }}</a></li>

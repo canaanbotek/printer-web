@@ -16,7 +16,7 @@ const messages = {
     },
     home: {
       title: "Printing services for custom components",
-      description: "Let us see your design and get your pieces with the best quality and in record time with us!"
+      description: "We make your models a reality, we see your design and get your pieces with the best quality with us."
     },
     work: {
       title: "3D printed solutions",
@@ -125,7 +125,7 @@ const messages = {
     },
     home: {
       title: "Servicios de impresión para componentes personalizados",
-      description: "Vemos su diseño y obtenga sus piezas con la mejor calidad y en tiempo récord con nosotros!"
+      description: "Volvemos realidad tus modelos, vemos su diseño y obtenga sus piezas con la mejor calidad con nosotros"
     },
     work: {
       title: "Soluciones de impresión 3D",
