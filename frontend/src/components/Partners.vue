@@ -15,7 +15,7 @@
     <Swiper
       :modules="[Autoplay, Navigation]"
       :loop="true"
-      :autoplay="{ delay: 20000, disableOnInteraction: false }"
+      :autoplay="{ delay: 2500, disableOnInteraction: false }"
       :breakpoints="{
         320: { slidesPerView: 1, spaceBetween: 20 },
         640: { slidesPerView: 2, spaceBetween: 30 },
@@ -64,7 +64,7 @@ const logos = [
 <style scoped>
 .swiper-button-prev,
 .swiper-button-next {
-  color: #4b5563;
+  color: #636568;
   top: 40%;
 }
 </style>
