@@ -39,8 +39,12 @@
           </div>
         
           <!-- Imagen -->
-          <div class="w-full flex justify-center p-2">
-            <img :src="materials[selectedIndex].image" :alt="materials[selectedIndex].title" class="w-124 h-auto object-cover rounded-lg shadow-lg" />
+          <div class="w-[500px] h-[400px] flex justify-center items-center p-2">
+            <img 
+              :src="materials[selectedIndex].image" 
+              :alt="materials[selectedIndex].name" 
+              class="w-full h-full object-contain rounded-lg shadow-lg" 
+            />
           </div>
         </div>
       </div>
