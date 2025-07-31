@@ -4,12 +4,12 @@
     <!-- Sección de Título y Descripción -->
     <div class="text-center mb-10">
       <h1 class="font-abel text-gray-900 text-4xl font-bold mb-4 relative">
-        {{ $t("work.title") }}
+        {{ $t("workShowcase.title") }}
         <!-- Línea verde debajo del h1 -->
         <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
       </h1>
       <p class="font-abel max-w-5xl text-xl text-gray-900">
-        {{ $t("work.description") }}
+        {{ $t("workShowcase.description") }}
       </p>
     </div>
 
@@ -36,11 +36,11 @@
       >
         <img
           :src="work.image"
-          :alt="t(`work.${work.key}Title`)"
+          :alt="t(`workShowcase.${work.key}Title`)"
           class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
         />
         <div class="absolute bottom-0 w-full bg-black/60 text-white text-center text-sm font-abel p-2">
-          {{ t(`work.${work.key}Description`) }}
+          {{ t(`workShowcase.${work.key}Description`) }}
         </div>
       </SwiperSlide>
     </Swiper>

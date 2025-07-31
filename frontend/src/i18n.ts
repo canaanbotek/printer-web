@@ -6,7 +6,7 @@ const messages = {
     navbar: {
       home: "Home",
       about: "About Us",
-      work: "Our Work",
+      workShowcase: "Our Work",
       materials: "Materials",
       whyus: "Why Us",
       printers: "Printers",
@@ -18,7 +18,7 @@ const messages = {
       title: "Printing services for custom components",
       description: "We make your models a reality, we see your design and get your pieces with the best quality with us."
     },
-    work: {
+    workShowcase: {
       title: "Some works",
       description: "At 3DIndustry, we believe the best way to demonstrate our capabilities is through our work. This section showcases the diverse range of projects we've completed, utilizing a wide range of materials and 3D printing techniques. From functional prototypes to high-precision finished parts, each project reflects our commitment to excellence and innovation. Explore our gallery and discover how we can transform your ideas into reality.",
       pcbAbsTitle: "PC-ABS",
@@ -116,7 +116,7 @@ const messages = {
       home: "Inicio",
       about: "Sobre Nosotros",
       materials: "Materiales",
-      work: "Trabajos",
+      workShowcase: "Trabajos",
       printers: "Impresoras",
       whyus: "Porqué nosotros",
       partners: "Colaboradores",
@@ -127,7 +127,7 @@ const messages = {
       title: "Servicios de impresión para componentes personalizados",
       description: "Volvemos realidad tus modelos, vemos su diseño y obtenga sus piezas con la mejor calidad con nosotros"
     },
-    work: {
+    workShowcase: {
       title: "Algunos trabajos",
       description: "En 3DIndustry, creemos que la mejor manera de demostrar nuestra capacidad es a través de nuestros trabajos. Esta sección es una muestra de la diversidad de proyectos que hemos realizado, utilizando una amplia gama de materiales y técnicas de impresión 3D. Desde prototipos funcionales hasta piezas finales de alta precisión, cada proyecto refleja nuestro compromiso con la excelencia y la innovación. Explora nuestra galería y descubre cómo podemos transformar tus ideas en realidad.",
       pcbAbsTitle: "PC-ABS",
