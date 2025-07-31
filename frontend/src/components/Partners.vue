@@ -15,7 +15,7 @@
     <Swiper
       :modules="[Autoplay, Navigation]"
       :loop="true"
-      :autoplay="{ delay: 2500, disableOnInteraction: false }"
+      :autoplay="{ delay: 3000, disableOnInteraction: false }"
       :breakpoints="{
         320: { slidesPerView: 1, spaceBetween: 20 },
         640: { slidesPerView: 2, spaceBetween: 30 },

@@ -13,67 +13,70 @@
       </p>
     </div>
 
-    <div class="w-full mt-10">
-      <Swiper
-        :slides-per-view="1"
-        :space-between="20"
-        :loop="true"
-        :autoplay="{ delay: 3000 }"
-        :navigation="true"
-        :pagination="{ clickable: true }"
-        :breakpoints="{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 }
-        }"
-        class="max-w-6xl w-full"
+    <!-- Carrusel de trabajos -->
+    <Swiper
+      :space-between="20"
+      :loop="true"
+      :modules="[Autoplay, Navigation]"
+      :autoplay="{ delay: 3000, disableOnInteraction: false }"
+      :pagination="{ clickable: true }"
+      :breakpoints="{
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }"
+      navigation
+      class="w-full max-w-7xl"
+    >
+      <SwiperSlide
+        v-for="(work, index) in workItems"
+        :key="index"
+        class="relative group rounded-lg shadow-lg overflow-hidden cursor-pointer"
+        @click="openImage(work.image)"
       >
-        <SwiperSlide
-          v-for="(work, index) in workItems"
-          :key="index"
-          class="rounded-lg shadow-lg p-2 cursor-pointer"
-          @click="openImage(work.image)"
-        >
-          <h3 class="font-abel text-2xl font-semibold mt-4 text-gray-900">
-            {{ t(`work.${work.key}Title`) }}
-          </h3>
-          <img
-            :src="work.image"
-            :alt="t(`work.${work.key}Title`)"
-            class="w-full h-64 object-cover mt-4 rounded-md"
-          />
-          <p class="font-abel text-xl text-gray-700 p-2">
-            {{ t(`work.${work.key}Description`) }}
-          </p>
-        </SwiperSlide>
-      </Swiper>
-    </div>
+        <img
+          :src="work.image"
+          :alt="t(`work.${work.key}Title`)"
+          class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div class="absolute bottom-0 w-full bg-black/60 text-white text-center text-sm font-abel p-2">
+          {{ t(`work.${work.key}Description`) }}
+        </div>
+      </SwiperSlide>
+    </Swiper>
 
-    <!-- Modal para vista ampliada -->
+    <!-- Modal para vista ampliada de imagenes -->
     <div
       v-if="selectedImage"
       class="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
       @click.self="closeImage"
     >
-      <div class="relative max-w-4xl w-full px-4">
-        <img :src="selectedImage" alt="Ampliado" class="w-full rounded shadow-xl" />
-        <button
-          class="absolute top-2 right-2 bg-white rounded-full p-2 shadow"
-          @click="closeImage"
-        >
-          ✕
-        </button>
+      <div class="relative max-w-full px-4 mx-auto">
+        <img
+          :src="selectedImage"
+          alt="Ampliado"
+          class="max-h-[500px] w-auto mx-auto rounded shadow-xl object-contain"
+        />
       </div>
+      <button
+        class="absolute top-4 right-4 bg-white hover:bg-gray-200 text-gray-800 rounded-full p-2 shadow-lg transition"
+        aria-label="Cerrar imagen"
+        @click="closeImage"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Autoplay, Navigation } from 'swiper/modules'
+
+import 'swiper/css'
+import 'swiper/css/navigation'
 
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -98,12 +101,17 @@ const closeImage = () => selectedImage.value = null;
 </script>
 
 <style scoped>
-.swiper-button-next,
-.swiper-button-prev {
-  color: #10b981; /* verde tailwind */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #636568;
+  top: 40%;
 }
 
-.swiper-pagination-bullet {
-  background: #10b981;
+.swiper-button-prev {
+  left: -1rem;
+}
+
+.swiper-button-next {
+  right: -1rem;
 }
 </style>
