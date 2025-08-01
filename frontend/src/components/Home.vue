@@ -1,37 +1,32 @@
 <template>
-  <section id="home" class="flex items-center justify-center bg-white bg-opacity-50 mt-20 mb-10">
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center justify-between px-8 gap-8">
+  <section id="home" class="flex flex-col items-center justify-center bg-white bg-opacity-50 mt-20 mb-10 px-4">
+    <div class="w-full max-w-4xl flex flex-col items-center justify-center text-center space-y-8">
+
       <!-- Sección de texto -->
-      <div class="text-left max-w-lg mb-8 md:mb-0">
-        <h1 class="font-abel text-gray-900 text-4xl font-bold mb-4 relative">
+      <div class="w-full">
+        <h1 class="font-inter text-gray-900 text-5xl font-bold mb-1 relative">
           {{ $t("home.title") }}
-          <!-- Línea verde debajo del h1 -->
-          <span class="block w-1/2 h-1 bg-green-500 mx-auto mt-2"></span>
         </h1>
-        <p class="font-abel text-gray-900 text-2xl bg-slate-300 bg-opacity-50 p-4 rounded-lg">
+        <p class="font-inter text-gray-400 font-bold text-4xl p-1">
           {{ $t("home.description") }}
         </p>
       </div>
 
       <!-- Sección de imagen -->
-      <div class="relative w-full h-[400px] md:h-[500px] lg:h-[550px] flex justify-center p-2 overflow-hidden">
-        <div class="relative w-full h-full">
-          <transition-group name="fade" tag="div">
-            <img 
-              v-for="(image, index) in images" 
-              :key="index"
-              v-show="index === currentImage"
-              :src="image" 
-              alt="Impresión 3D" 
-              class="absolute w-full h-full object-contain rounded-lg shadow-lg transition-opacity duration-1000 ease-in-out"
-            />
-          </transition-group>
-        </div>
+      <div class="relative w-full max-w-xl h-[300px] md:h-[300px] lg:h-[650px] p-2 overflow-hidden">
+        <transition name="fade" mode="out-in">
+          <img
+            :key="currentImage"
+            :src="images[currentImage]"
+            alt="Impresión 3D"
+            class="w-full h-full object-contain rounded-lg transition-opacity duration-3000 ease-in-out"
+          />
+        </transition>
       </div>
+      
     </div>
   </section>
 </template>
-
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue"
@@ -43,7 +38,6 @@ const { t } = useI18n()
 const images = ref([
   "/src/assets/materials/PC-ABS.png",
   "/src/assets/materials/TPU.jpg",
-  "/src/assets/materials/ABS_piece.jpeg",
   "/src/assets/materials/PA-CF.jpg",
   "/src/assets/materials/PET-CF.jpg"
 ])
@@ -67,7 +61,7 @@ onUnmounted(() => {
 <style scoped>
 /* Transición más fluida entre imágenes */
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 1.0s ease-in-out;
 }
 .fade-enter-from, .fade-leave-to {
   opacity: 0;

@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         abel: ["Abel", "sans-serif"],
+        inter:["Inter", "sans-serif"],
       },
     },
   },

@@ -124,8 +124,8 @@ const messages = {
       language: "Idioma"
     },
     home: {
-      title: "Servicios de impresión para componentes personalizados",
-      description: "Volvemos realidad tus modelos, vemos su diseño y obtenga sus piezas con la mejor calidad con nosotros"
+      title: "Hacemos tus diseños realidad",
+      description: "Servicios de impresión 3D y asesoria"
     },
     workShowcase: {
       title: "Algunos trabajos",
