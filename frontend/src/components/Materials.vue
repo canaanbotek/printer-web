@@ -1,8 +1,8 @@
 <template>
   <section 
-    id="materials"
-    class="flex flex-col items-center p-5 w-full mb-10"
-    style="background: linear-gradient(to bottom, #464444, #1a1a1a, #2a2a2a, #3a3a3a, #444444);">
+  id="materials"
+  class="flex flex-col items-center p-5 w-full mb-10 backdrop-blur-md bg-opacity-70"
+  style="background: linear-gradient(to bottom, #1a1a1a, #2a2a2a, #3a3a3a, #2a2a2a, #2a2a2a, #1a1a1a);">
 
     <!-- Título y descripción -->
     <div class="text-center max-w-5xl px-4 mb-10">
