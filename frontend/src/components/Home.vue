@@ -1,69 +1,70 @@
 <template>
-  <section id="home" class="flex items-center justify-center mt-20 mb-10 rounded">
-    <div class="w-full max-w-4xl flex flex-col items-center justify-center text-center space-y-3">
+  <section
+    id="home"
+    class="relative w-full h-[600px] flex items-center justify-start p-10 rounded overflow-hidden"
+    @mousemove="handleMouseMove"
+    @mouseleave="resetTilt"
+    @touchmove.prevent="handleTouchMove"
+    @touchend="resetTilt"
+  >
+    <!-- Imagen de fondo -->
+    <div
+      class="absolute inset-0 w-full h-full bg-no-repeat bg-center bg-cover pointer-events-none"
+      :style="`background-image: url('/src/assets/printers3.jpg'); transform: rotateX(${tiltX}deg) rotateY(${tiltY}deg); transition: transform 0.1s;`"
+    />
 
-      <!-- Sección de texto -->
-      <div class="w-full">
-        <h1 class="font-abel text-gray-100 text-5xl font-bold mb-1 relative">
-          {{ $t("home.title") }}
-        </h1>
-        <p class="font-abel text-gray-400 font-bold text-4xl p-1">
-          {{ $t("home.description") }}
-        </p>
-      </div>
-
-      <!-- Sección de imagen -->
-      <div class="relative w-full max-w-xl h-[300px] md:h-[300px] lg:h-[500px] p-2 overflow-hidden mt-0">
-        <transition name="fade" mode="out-in">
-          <img
-            :key="currentImage"
-            :src="images[currentImage]"
-            alt="Impresión 3D"
-            class="w-full h-full object-contain rounded-lg transition-opacity duration-3000 ease-in-out"
-          />
-        </transition>
-      </div>
-      
+    <!-- Contenido del texto -->
+    <div class="relative z-10 max-w-4xl text-left">
+      <h1 class="font-abel text-white text-5xl font-bold mb-4">
+        {{ $t("home.title") }}
+      </h1>
+      <p class="font-abel text-gray-200 font-bold text-3xl">
+        {{ $t("home.description") }}
+      </p>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue"
+import { ref } from "vue"
 import { useI18n } from "vue-i18n"
 
 const { t } = useI18n()
 
-// Lista de imágenes
-const images = ref([
-  "/src/assets/materials/PC-ABS.png",
-  "/src/assets/materials/TPU.jpg",
-  "/src/assets/materials/PA-CF.jpg",
-  "/src/assets/materials/PET-CF.jpg"
-])
+const tiltX = ref(0)
+const tiltY = ref(0)
 
-const currentImage = ref(0)
-let interval = null
+const handleMouseMove = (e: MouseEvent) => {
+  const { clientX, clientY, currentTarget } = e
+  const { width, height, left, top } = (currentTarget as HTMLElement).getBoundingClientRect()
 
-// Cambio automático de imágenes cada 3 segundos
-onMounted(() => {
-  interval = setInterval(() => {
-    currentImage.value = (currentImage.value + 1) % images.value.length;
-  }, 3000)
-})
+  const x = clientX - left
+  const y = clientY - top
 
-// Limpieza del intervalo cuando el componente se desmonta
-onUnmounted(() => {
-  clearInterval(interval)
-})
+  const rotateX = ((y / height) - 0.5) * -20
+  const rotateY = ((x / width) - 0.5) * 20
+
+  tiltX.value = rotateX
+  tiltY.value = rotateY
+}
+
+const handleTouchMove = (e: TouchEvent) => {
+  const touch = e.touches[0]
+  const target = e.currentTarget as HTMLElement
+  const { width, height, left, top } = target.getBoundingClientRect()
+
+  const x = touch.clientX - left
+  const y = touch.clientY - top
+
+  const rotateX = ((y / height) - 0.5) * -10
+  const rotateY = ((x / width) - 0.5) * 10
+
+  tiltX.value = rotateX
+  tiltY.value = rotateY
+}
+
+const resetTilt = () => {
+  tiltX.value = 0
+  tiltY.value = 0
+}
 </script>
-
-<style scoped>
-/* Transición más fluida entre imágenes */
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 1.0s ease-in-out;
-}
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
-}
-</style>
