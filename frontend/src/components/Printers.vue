@@ -1,32 +1,33 @@
 <template>
-  <section id="printers" class=" flex items-center p-5 mb-20">
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      
-      <!-- Columna de la imagen (Tarjeta sin texto) -->
-      <div class="flex justify-center">
-        <div class="bg-black/50 shadow-lg rounded-lg overflow-hidden p-4">
-          <img :src="backgroundImage" alt="Impresora 3D" class="w-full h-auto object-cover rounded-lg" />
-        </div>
-      </div>
+  <section
+    id="printers"
+    class="relative w-full min-h-screen bg-black flex justify-center bg-no-repeat bg-cover bg-center p-5"
+    :style="{ backgroundImage: `url(${backgroundImage})` }"
+  >
+    <div class="relative z-10 px-6 w-full max-w-5xl">
 
-      <!-- Columna del texto -->
-      <div class="text-left max-w-lg">
-        <h1 class="font-abel text-4xl font-bold text-gray-100 mb-4 relative">
-          {{ $t("printers.title") }}
-          <span class="block w-1/2 h-1 bg-green-800 mt-3 mb-3"></span>
-        </h1>
-        <p class="font-abel text-xl text-gray-100 bg-gradient-to-br from-emerald-950 to-emerald-900 p-4 rounded-xl">
+      <!-- Título sin fondo blur -->
+      <h1 class="font-abel text-6xl font-bold text-gray-100 mb-4">
+        {{ $t("printers.title") }}
+      </h1>
+
+      <!-- Texto con fondo blur -->
+      <div class="bg-black/60 backdrop-blur-md p-6 rounded-xl">
+        <p class="font-abel text-xl text-gray-100">
           {{ $t("printers.description") }}
         </p>
       </div>
-
+      
     </div>
+
+    <!-- Overlay opcional para oscurecer imagen -->
+    <div class="absolute inset-0 bg-black/30 z-0"></div>
   </section>
 </template>
 
 <script setup lang="ts">
-import backgroundImage from "../assets/k1c-complete.png";
-import { useI18n } from "vue-i18n"
+import backgroundImage from "../assets/creality1.jpg"; // Cambia a tu imagen preferida
 
-const { t } = useI18n()
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 </script>
