@@ -11,7 +11,7 @@
 
       <!-- Columna del texto -->
       <div class="text-left max-w-lg">
-        <h1 class="font-inter text-4xl font-bold text-gray-900 mb-4 relative">
+        <h1 class="font-inter text-2xl font-bold text-gray-900 mb-4 relative">
           {{ $t("printers.title") }}
         </h1>
         <p class="font-inter text-xl text-gray-700 bg-slate-100 p-4 rounded-xl">

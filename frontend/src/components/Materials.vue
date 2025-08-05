@@ -78,14 +78,14 @@
       image: "/src/assets/materials/abs.jpg"
     },
     {
+      name: "ASA",
+      key: "asa",
+      image: "/src/assets/materials/asa.jpeg"
+    },
+    {
       name: "PA",
       key: "pa",
       image: "/src/assets/materials/pa-nylon.jpeg"
-    },
-    {
-      name: "PC",
-      key: "pc",
-      image: "/src/assets/materials/pc.jpg"
     },
     {
       name: "PC-ABS",
@@ -98,25 +98,10 @@
       image: "/src/assets/materials/tpu_material.png"
     },
     {
-      name: "ASA",
-      key: "asa",
-      image: "/src/assets/materials/asa.jpeg"
-    },
-    {
       name: "PLA-CF",
       key: "plaCf",
       image: "/src/assets/materials/pla-cf.jpg"
     },
-    {
-      name: "PA-CF",
-      key: "paCf",
-      image: "/src/assets/materials/pa-cf.jpg"
-    },
-    {
-      name: "PET-CF",
-      key: "petCf",
-      image: "/src/assets/materials/pet-cf.png"
-    }
   ];
 
   </script>
