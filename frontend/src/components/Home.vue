@@ -1,6 +1,6 @@
 <template>
   <section id="home" class="flex flex-col items-center justify-center bg-white bg-opacity-50 mt-20 mb-10 px-4">
-    <div class="w-full max-w-4xl flex flex-col items-center justify-center text-center space-y-8">
+    <div class="w-full max-w-4xl flex flex-col items-center justify-center text-center space-y-3">
 
       <!-- Sección de texto -->
       <div class="w-full">
@@ -13,7 +13,7 @@
       </div>
 
       <!-- Sección de imagen -->
-      <div class="relative w-full max-w-xl h-[300px] md:h-[300px] lg:h-[650px] p-2 overflow-hidden">
+      <div class="relative w-full max-w-xl h-[300px] md:h-[300px] lg:h-[500px] p-2 overflow-hidden mt-0">
         <transition name="fade" mode="out-in">
           <img
             :key="currentImage"

@@ -2,11 +2,11 @@
   <section id="partners" class="flex flex-col justify-center items-center relative p-5 mb-20">
     <!-- Título y Descripción -->
     <div class="text-center mb-10">
-      <h1 class="font-abel text-gray-900 text-4xl font-bold mb-4 relative">
+      <h1 class="font-inter text-gray-900 text-4xl font-bold mb-4 relative">
         {{ $t("partners.title") }}
-        <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
+        
       </h1>
-      <p class="font-abel text-xl max-w-5xl text-gray-900">
+      <p class="font-inter text-xl max-w-5xl text-gray-900">
         {{ $t("partners.description") }}
       </p>
     </div>

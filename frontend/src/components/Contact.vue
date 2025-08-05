@@ -2,9 +2,9 @@
   <section id="contact" class="flex flex-col relative items-center mb-20">
     <!-- Título y descripción -->
     <div class="text-center max-w-5xl px-4 mb-10">
-      <h1 class="font-abel text-4xl font-bold text-gray-900">{{ $t("contact.title") }}</h1>
-      <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
-      <p class="font-abel text-xl text-gray-700 mt-4">
+      <h1 class="font-inter text-4xl font-bold text-gray-900">{{ $t("contact.title") }}</h1>
+      
+      <p class="font-inter text-xl text-gray-700 mt-4">
         {{ $t("contact.description") }}
       </p>
     </div>
@@ -20,7 +20,7 @@
             type="email" 
             :placeholder="$t('contact.emailPlaceholder')" 
             required 
-            class="font-abel p-2 bg-white text-black border border-gray-300 rounded w-full"
+            class="font-inter p-2 bg-white text-black border border-gray-300 rounded w-full"
           />
           <p class="text-left italic text-sm text-gray-500 mt-1">{{ $t("contact.emailDescription") }}</p>
         </div>
@@ -32,7 +32,7 @@
             :placeholder="$t('contact.messagePlaceholder')" 
             required
             maxlength="1000"
-            class="font-abel p-2 bg-white text-black border border-gray-300 rounded w-full h-32"
+            class="font-inter p-2 bg-white text-black border border-gray-300 rounded w-full h-32"
           ></textarea>
           <p class="text-left italic text-sm text-gray-500 mt-1">{{ $t("contact.messageDescription") }} ({{ message.length }}/{{ MAX_TEXT_LENGTH }})</p>
         </div>
@@ -43,7 +43,7 @@
             ref="fileInput"
             type="file"
             @change="handleFileUpload" 
-            class="font-abel p-2 bg-white text-black border border-gray-300 rounded w-full"
+            class="font-inter p-2 bg-white text-black border border-gray-300 rounded w-full"
           />
           <p v-if="fileSizeError" class="text-sm text-red-500 mt-1 text-left">
             {{ $t("contact.fileSizeError") }}
@@ -52,7 +52,7 @@
         </div>
       
         <!-- Botón de submit con carga -->
-        <button type="submit" class="font-abel bg-blue-800 text-white p-2 rounded w-full">
+        <button type="submit" class="font-inter bg-blue-800 text-white p-2 rounded w-full">
           <!-- Condicional para mostrar el texto y el ícono de carga -->
           <div v-if="isLoading" class="flex items-center justify-center text-white font-semibold">
             <span class="flex items-center">

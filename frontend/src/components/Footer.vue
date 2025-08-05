@@ -54,6 +54,7 @@ const tools = [
   { name: "Vue.js", image: "/src/assets/icons/vue.svg" },
   { name: "Vite", image: "/src/assets/icons/vite.svg" },
   { name: "Yarn", image: "/src/assets/icons/yarn.svg" },
-  { name: "TailwindCss", image: "/src/assets/icons/tailwindcss.svg" }
+  { name: "TailwindCss", image: "/src/assets/icons/tailwindcss.svg" }, 
+  { name: "NodeJS", image: "/src/assets/icons/nodejs-icon.svg" }
 ];
 </script>

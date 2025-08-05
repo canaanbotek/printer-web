@@ -68,7 +68,7 @@ const messages = {
     },
     printers: {
       title: "With the Best Equipment",
-      description: "The Creality K1C stands out as a robust and efficient 3D printing solution, specifically designed to meet the demand for industrial parts. Its foundation lies in its ability to provide agile and reliable production. The high printing speed, reaching up to 600 mm/s, enables the rapid creation of prototypes and final parts, accelerating development and production cycles. The versatility in material selection, from PLA and PETG to carbon fiber composites and Nylon, allows for the fabrication of parts with mechanical, thermal, and chemical properties tailored to each application. The reliability of the K1C, with its automatic leveling, anti-clog extruder, and quick-change nozzle, optimizes production processes by minimizing downtime. Additionally, the AI-powered camera enhances quality control, ensuring the precision and consistency of parts. The capability to manufacture parts on demand reduces the need for inventories, contributing to cost optimization. Overall, the Creality K1C presents itself as an efficient and versatile solution for industrial part manufacturing, combining speed, durability, and precision."
+      description: "The Creality K1C is presented as a robust and efficient 3D printing solution, specifically designed to meet the demand for industrial parts, allowing the creation of prototypes and final parts in reduced times, accelerating development and production cycles."
     },
     whyus: {
       title: "Why Choose Us?",
@@ -177,7 +177,7 @@ const messages = {
     },
     printers: {
       title: "Con el mejor equipamiento",
-      description: "La Creality K1C se presenta como una solución de impresión 3D robusta y eficiente, especialmente diseñada para satisfacer la demanda de piezas industriales se fundamenta en su capacidad para ofrecer una producción ágil y robusta. La alta velocidad de impresión, alcanzando los 600 mm/s, permite la creación de prototipos y piezas finales en tiempos reducidos, acelerando los ciclos de desarrollo y producción. La versatilidad en la selección de materiales, desde PLA y PETG hasta compuestos de fibra de carbono y Nylon, posibilita la fabricación de piezas con propiedades mecánicas, térmicas y químicas adaptadas a cada aplicación. La fiabilidad de la K1C, con su nivelación automática, extrusor antiatascos y boquilla de cambio rápido, optimiza los procesos de producción al minimizar los tiempos de inactividad. Además, la cámara con inteligencia artificial mejora el control de calidad, garantizando la precisión y consistencia de las piezas. La capacidad de fabricar piezas bajo demanda reduce la necesidad de inventarios, contribuyendo a la optimización de costos. En conjunto, las Creality K1C se presentan como una solución eficiente y versátil para la manufactura de piezas industriales, al combinar velocidad, resistencia y precisión."
+      description: "La Creality K1C se presenta como una solución de impresión 3D robusta y eficiente, especialmente diseñada para satisfacer la demanda de piezas industriales permitiendo la creación de prototipos y piezas finales en tiempos reducidos, acelerando los ciclos de desarrollo y producción."
     },
     whyus: {
       title: "¿Por qué elegirnos?",

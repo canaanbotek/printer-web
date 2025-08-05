@@ -5,11 +5,11 @@
 
     <!-- Sección de título y descripción -->
     <div class="text-center mb-10">
-      <h1 class="font-abel text-gray-900 text-4xl font-bold mb-4 relative">
+      <h1 class="font-inter text-gray-900 text-4xl font-bold mb-4 relative">
         {{ $t("about.title") }}
-        <span class="block w-1/4 h-1 bg-green-500 mx-auto mt-2"></span>
+        
       </h1>
-      <p class="font-abel text-xl text-gray-900">
+      <p class="font-inter text-xl text-gray-900">
         {{ $t("about.description") }}
       </p>
     </div>
@@ -22,8 +22,8 @@
         class="bg-white rounded-lg shadow-lg p-4 transform transition-transform duration-300 hover:scale-105 cursor-pointer"
       >
         <img :src="member.image" class="w-48 h-48 mx-auto rounded-full object-cover shadow-md" />
-        <h3 class="font-abel text-2xl font-semibold mt-4 text-gray-900">{{ t(`about.${teamMembers[index].keyTitle}`) }}</h3>
-        <p class="font-abel text-xl text-gray-600 mt-2">{{ t(`about.${teamMembers[index].keyDescription}`) }}</p>
+        <h3 class="font-inter text-2xl font-semibold mt-4 text-gray-900">{{ t(`about.${teamMembers[index].keyTitle}`) }}</h3>
+        <p class="font-inter text-xl text-gray-600 mt-2">{{ t(`about.${teamMembers[index].keyDescription}`) }}</p>
       </div>
     </div>
   </section>

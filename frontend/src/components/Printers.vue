@@ -11,11 +11,10 @@
 
       <!-- Columna del texto -->
       <div class="text-left max-w-lg">
-        <h1 class="font-abel text-4xl font-bold text-gray-900 mb-4 relative">
+        <h1 class="font-inter text-4xl font-bold text-gray-900 mb-4 relative">
           {{ $t("printers.title") }}
-          <span class="block w-1/2 h-1 bg-green-500 mt-3 mb-3"></span>
         </h1>
-        <p class="font-abel text-xl text-gray-700 bg-slate-200 p-4 rounded-xl">
+        <p class="font-inter text-xl text-gray-700 bg-slate-100 p-4 rounded-xl">
           {{ $t("printers.description") }}
         </p>
       </div>
