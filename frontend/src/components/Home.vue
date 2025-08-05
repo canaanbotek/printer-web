@@ -15,10 +15,10 @@
 
     <!-- Contenido del texto -->
     <div class="relative z-10 max-w-4xl text-left">
-      <h1 class="font-abel text-white text-5xl font-bold mb-4">
+      <h1 class="font-abel text-white text-7xl font-bold mb-4">
         {{ $t("home.title") }}
       </h1>
-      <p class="font-abel text-gray-200 font-bold text-3xl">
+      <p class="font-abel text-gray-200 font-bold text-4xl">
         {{ $t("home.description") }}
       </p>
     </div>
