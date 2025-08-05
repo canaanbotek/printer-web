@@ -25,7 +25,7 @@
           :alt="item.caption"
           class="max-h-[500px] w-auto object-contain mb-4 rounded shadow"
         />
-        <p class="text-sm text-gray-700 text-center max-w-md">
+        <p class="text-sm text-gray-400 text-center max-w-md">
           {{ item.caption }}
         </p>
       </SwiperSlide>

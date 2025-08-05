@@ -3,7 +3,7 @@
     <div class="container mx-auto px-8 md:px-16">
       <!-- Título de la sección -->
       <div class="text-center mb-10">
-        <h1 class="font-inter text-gray-900 text-4xl font-bold mb-4 relative">
+        <h1 class="font-abel text-gray-100 text-4xl font-bold mb-4 relative">
           {{ $t("whyus.title") }}
           
         </h1>
@@ -14,8 +14,8 @@
         <!-- Columna de texto -->
         <div class="space-y-8">
           <div v-for="(item, index) in reasons" :key="index">
-            <h3 class="font-inter text-2xl font-bold text-gray-900">{{ t(`whyus.${reasons[index].keyTitle}`) }}</h3>
-            <p class="font-inter text-xl text-gray-700 mt-2">{{ t(`whyus.${reasons[index].keyDescription}`) }}</p>
+            <h3 class="font-abel text-2xl font-bold text-gray-100">{{ t(`whyus.${reasons[index].keyTitle}`) }}</h3>
+            <p class="font-abel text-xl text-gray-400 mt-2">{{ t(`whyus.${reasons[index].keyDescription}`) }}</p>
           </div>
         </div>
 

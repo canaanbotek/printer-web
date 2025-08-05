@@ -1,14 +1,18 @@
 <template>
-  <div class="bg-white w-full ">
+  <div class="flex flex-col min-h-screen">
     <Navbar />
-    <Home class="scroll-mt-20"/>
-    <Materials class="scroll-mt-10"/>
-    <Printers class="scroll-mt-10"/>
-    <WhyUs class="scroll-mt-10"/>
-    <WorkShowcase class="scroll-mt-10"/>
-    <About class="scroll-mt-10"/>
-    <Partners class="scroll-mt-10"/>
-    <Contact class="scroll-mt-10"/>
+
+    <div class="bg-black/50 backdrop-blur-md w-full flex-1 pb-6">
+      <Home class="scroll-mt-20"/>
+      <Materials class="scroll-mt-10"/>
+      <Printers class="scroll-mt-10"/>
+      <WhyUs class="scroll-mt-10"/>
+      <WorkShowcase class="scroll-mt-10"/>
+      <About class="scroll-mt-10"/>
+      <Partners class="scroll-mt-10"/>
+      <Contact class="scroll-mt-10"/>
+    </div>
+    
     <Footer />
   </div>
 </template>

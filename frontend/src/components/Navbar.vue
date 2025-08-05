@@ -1,10 +1,10 @@
 <template>
-  <nav class="bg-gray-200 text-gray-600 fixed w-full top-0 left-0 z-50 shadow-md">
+  <nav class="bg-black/50 backdrop-blur-xl text-gray-100 fixed w-full top-0 left-0 z-50 shadow-md rounded-md">
     <div class="max-w-screen-xl mx-auto p-1 flex justify-between items-center">
     
       <!-- Logo / home -->
       <a href="#home">
-        <span><img src="../assets/icono1.png" alt="Trabajo 1" class="w-40"/></span>
+        <span><img src="../assets/3DIndustrywhiteicon.png" alt="Trabajo 1" class="w-40"/></span>
       </a>
       
       <!-- Menú -->
@@ -20,7 +20,7 @@
       </ul>
 
       <!-- Selector de idioma -->
-      <select v-model="$i18n.locale" class="bg-gray-200 text-gray-900 p-1 rounded">
+      <select v-model="$i18n.locale" class="text-gray-100 p-2 rounded">
         <option value="es">🇪🇸 Español</option>
         <option value="en">🇬🇧 English</option>
       </select>

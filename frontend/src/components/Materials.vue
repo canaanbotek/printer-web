@@ -2,9 +2,9 @@
     <section id="materials" class="flex flex-col items-center p-5 w-full mb-10">
       <!-- Título y descripción -->
       <div class="text-center max-w-5xl px-4 mb-10">
-        <h1 class="font-inter text-4xl font-bold text-gray-900">{{ $t("materials.title") }}</h1>
+        <h1 class="font-abel text-4xl font-bold text-gray-100">{{ $t("materials.title") }}</h1>
         
-        <p class="font-inter text-xl text-gray-700 mt-4">
+        <p class="font-abel text-xl text-gray-400 mt-4">
           {{ $t("materials.description") }}
         </p>
       </div>
@@ -17,10 +17,10 @@
             v-for="(material, index) in materials"
             :key="index"
             @click="selectedIndex = index"
-            class="font-inter px-4 text-xl py-2 border-b-4 transition-all duration-300 snap-start"
+            class="font-abel px-4 text-xl py-2 border-b-4 transition-all duration-300 snap-start"
             :class="selectedIndex === index 
               ? 'border-green-500 text-green-600 font-semibold' 
-              : 'border-transparent text-gray-600 hover:text-gray-900'"
+              : 'border-transparent text-gray-600 hover:text-gray-100'"
           >
             {{ material.name }}
           </button>
@@ -31,10 +31,10 @@
 
           <!-- Texto -->
           <div class="text-left px-4">
-            <h3 class="font-inter text-2xl font-semibold text-gray-900">
+            <h3 class="font-abel text-2xl font-semibold text-gray-100">
               {{ t(`materials.${materials[selectedIndex].key}Title`) }}
             </h3>
-            <p class="font-inter text-xl bg-slate-100 text-gray-700 mt-4 p-4 rounded-xl">
+            <p class="font-abel text-xl bg-slate-100 text-gray-400 mt-4 p-4 rounded-xl">
               {{ t(`materials.${materials[selectedIndex].key}Description`) }}
             </p>
           </div>

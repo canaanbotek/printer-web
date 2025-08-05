@@ -4,9 +4,9 @@
 
       <!-- Título y descripción -->
       <div class="text-center max-w-5xl px-4 mb-10">
-        <h1 class="font-inter text-4xl font-bold text-gray-900">{{ t("workShowcase.title") }}</h1>
+        <h1 class="font-abel text-4xl font-bold text-gray-100">{{ t("workShowcase.title") }}</h1>
         
-        <p class="font-inter text-xl text-gray-700 mt-4">
+        <p class="font-abel text-xl text-gray-400 mt-4">
           {{ t("workShowcase.description") }}
         </p>
       </div>
@@ -35,7 +35,7 @@
             class="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg transition-all cursor-pointer"
             @click="openModal(rubro)"
           >
-            <h3 class="text-lg fofont-bold text-gray-900 p-1">{{ rubro.name }}</h3>
+            <h3 class="text-lg fofont-bold text-gray-100 p-1">{{ rubro.name }}</h3>
             <img
               :src="rubro.cover"
               :alt="rubro.name"

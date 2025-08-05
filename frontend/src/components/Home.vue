@@ -1,13 +1,13 @@
 <template>
-  <section id="home" class="flex flex-col items-center justify-center bg-white bg-opacity-50 mt-20 mb-10 px-4">
+  <section id="home" class="flex items-center justify-center mt-20 mb-10 rounded">
     <div class="w-full max-w-4xl flex flex-col items-center justify-center text-center space-y-3">
 
       <!-- Sección de texto -->
       <div class="w-full">
-        <h1 class="font-inter text-gray-900 text-5xl font-bold mb-1 relative">
+        <h1 class="font-abel text-gray-100 text-5xl font-bold mb-1 relative">
           {{ $t("home.title") }}
         </h1>
-        <p class="font-inter text-gray-400 font-bold text-4xl p-1">
+        <p class="font-abel text-gray-400 font-bold text-4xl p-1">
           {{ $t("home.description") }}
         </p>
       </div>

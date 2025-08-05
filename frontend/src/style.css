@@ -28,7 +28,13 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(192, 218, 226));
+
+  background-image: url('/src/assets/granulatedwhitewall916.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  /* background: linear-gradient(to bottom, #464444, #1a1a1a, #2a2a2a, #3a3a3a, #444444); /* Degradado negro a gris tenue */
 }
 
 h1 {
@@ -63,7 +69,7 @@ button:focus-visible {
   width: 100%;
   max-width: 80%;
   margin: 0 auto;
-  padding: 1rem; /* Puedes ajustar el padding según lo necesites */
+  padding: 1rem;
   text-align: center;
 }
 
