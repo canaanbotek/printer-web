@@ -1,16 +1,21 @@
 <template>
-  <section class="py-16">
-    <div class="max-w-6xl mx-auto px-4 text-center">
+  <section
+    class="py-16"
+    style="background: linear-gradient(to bottom, #1a1a1a, #2a2a2a, #3a3a3a, #2a2a2a, #2a2a2a, #1a1a1a);">
+    
+    <!-- Overlay oscuro para mejorar legibilidad -->
+    <div class="absolute inset-0 bg-black/50 z-0"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-4 text-center">
 
       <!-- Título y descripción -->
-      <div class="text-center max-w-5xl px-4 mb-10">
-        <h1 class="font-abel text-4xl font-bold text-gray-100">{{ t("workShowcase.title") }}</h1>
+      <div class="text-left max-w-5xl px-4 mb-10">
+        <h1 class="font-abel text-6xl font-bold text-gray-100">{{ t("workShowcase.title") }}</h1>
         
         <p class="font-abel text-xl text-gray-400 mt-4">
           {{ t("workShowcase.description") }}
         </p>
       </div>
-
 
       <!-- Swiper de rubros -->
       <Swiper
@@ -24,25 +29,24 @@
           1024: { slidesPerView: 5, spaceBetween: 20 },
         }"
         navigation
-        class="w-full max-w-7xl flex justify-center items-center"
+        class="w-full max-w-5xl flex justify-center items-center"
       >
         <SwiperSlide 
           v-for="rubro in rubros"
           :key="rubro.id"
-          class="flex justify-center items-center h-48"
+          class="flex justify-center items-center"
         >
           <div
-            class="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg transition-all cursor-pointer"
+            class="relative w-full aspect-[3/5] rounded-2xl shadow-md hover:shadow-lg transition-all cursor-pointer bg-center bg-cover flex items-end justify-center"
+            :style="`background-image: url('${rubro.cover}')`"
             @click="openModal(rubro)"
           >
-            <h3 class="text-lg fofont-bold text-gray-100 p-1">{{ rubro.name }}</h3>
-            <img
-              :src="rubro.cover"
-              :alt="rubro.name"
-              class="h-48 w-full object-cover rounded-xl mb-4"
-            />
+            <div class="bg-black/60 backdrop-blur-sm text-white text-lg p-2 rounded-b-2xl w-full text-center">
+              {{ rubro.name }}
+            </div>
           </div>
         </SwiperSlide>
+
       </Swiper>
 
       <!-- Modal -->
@@ -69,6 +73,8 @@ import RubroModal from "./RubroModal.vue";
 import Industrial from "./rubro/Industrial.vue";
 import Garden from "./rubro/Garden.vue";
 import Deco from "./rubro/Deco.vue";
+import Products from "./rubro/Products.vue";
+import Office from "./rubro/Office.vue";
 
 const { t } = useI18n();
 
@@ -78,7 +84,7 @@ const rubros = [
   {
     id: "industrial",
     name: "Industrial",
-    cover: "/src/assets/showcases/industrial/engranaje_1.jpeg",
+    cover: "/src/assets/showcases/industrial/industrialProducts.jpeg",
     component: Industrial,
   },
   {
@@ -90,8 +96,20 @@ const rubros = [
   {
     id: "deco",
     name: "Decorativos",
-    cover: "/src/assets/showcases/deco/coffe2D.jpeg",
+    cover: "/src/assets/showcases/deco/coffeSign.jpeg",
     component: Deco,
+  },
+  {
+    id: "products",
+    name: "Productos",
+    cover: "/src/assets/showcases/products/coffeProducts.jpeg",
+    component: Products,
+  },
+    {
+    id: "office",
+    name: "Office",
+    cover: "/src/assets/showcases/office/officeProducts.jpeg",
+    component: Office,
   },
 ];
 

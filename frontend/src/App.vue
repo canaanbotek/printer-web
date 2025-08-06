@@ -2,7 +2,7 @@
   <div class="flex flex-col min-h-screen">
     <Navbar />
 
-    <div class="bg-black/50 backdrop-blur-md w-full flex-1 pb-6">
+    <div class="bg-black/50 backdrop-blur-md w-full flex-1">
       <Home class="scroll-mt-20"/>
       <Materials class="scroll-mt-10"/>
       <Printers class="scroll-mt-10"/>

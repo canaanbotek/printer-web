@@ -1,7 +1,7 @@
 <template>
   <section
     id="whyus"
-    class="relative p-5 w-full mb-20 bg-cover bg-center"
+    class="relative p-10 w-full bg-cover bg-center"
     style="background-image: url('/src/assets/printers1.jpg');"
   >
     <!-- Título -->

@@ -1,71 +1,82 @@
 <template>
-  <section id="contact" class="flex flex-col relative items-center mb-20">
-    <!-- Título y descripción -->
-    <div class="text-center max-w-5xl px-4 mb-10">
-      <h1 class="font-abel text-4xl font-bold text-gray-100">{{ $t("contact.title") }}</h1>
-      
-      <p class="font-abel text-xl text-gray-400 mt-4">
-        {{ $t("contact.description") }}
-      </p>
-    </div>
+  <section 
+    id="contact"
+    class="flex flex-col relative items-center pb-20 pt-20"
+    style="background: linear-gradient(to bottom, #1a1a1a, #2a2a2a, #3a3a3a, #2a2a2a, #2a2a2a, #1a1a1a);">
 
-    <!-- Formulario -->
-    <div class="text-center bg-white text-white w-4/5 mx-auto">
-      <form @submit.prevent="submitForm" class="flex flex-col mx-auto space-y-4">
+    <!-- Overlay oscuro para mejorar legibilidad -->
+    <div class="absolute inset-0 bg-black/50 z-0"></div>
+    
+    <!-- Contenido principal -->
+    <div class="relative z-10 max-w-6xl mx-auto px-4 text-center"> 
+      <!-- Título y descripción -->
+      <div class="text-left max-w-5xl px-4 mb-10">
+        <h1 class="font-abel text-6xl font-bold text-gray-100">
+          {{ $t("contact.title") }}
+        </h1>
+        <p class="font-abel text-xl text-gray-200 mt-4">
+          {{ $t("contact.description") }}
+        </p>
+      </div>
 
-        <!-- Campo de Email -->
-        <div class="w-full">
-          <input 
-            v-model="email" 
-            type="email" 
-            :placeholder="$t('contact.emailPlaceholder')" 
-            required 
-            class="font-abel p-2 bg-white text-black border border-gray-300 rounded w-full"
-          />
-          <p class="text-left italic text-sm text-gray-500 mt-1">{{ $t("contact.emailDescription") }}</p>
-        </div>
-      
-        <!-- Campo de Mensaje -->
-        <div class="w-full">
-          <textarea 
-            v-model="message" 
-            :placeholder="$t('contact.messagePlaceholder')" 
-            required
-            maxlength="1000"
-            class="font-abel p-2 bg-white text-black border border-gray-300 rounded w-full h-32"
-          ></textarea>
-          <p class="text-left italic text-sm text-gray-500 mt-1">{{ $t("contact.messageDescription") }} ({{ message.length }}/{{ MAX_TEXT_LENGTH }})</p>
-        </div>
-      
-        <!-- Campo de Archivo con límite de tamaño -->
-        <div class="w-full">
-          <input
-            ref="fileInput"
-            type="file"
-            @change="handleFileUpload" 
-            class="font-abel p-2 bg-white text-black border border-gray-300 rounded w-full"
-          />
-          <p v-if="fileSizeError" class="text-sm text-red-500 mt-1 text-left">
-            {{ $t("contact.fileSizeError") }}
-          </p>
-          <p class="text-sm text-gray-500 mt-1 text-left">{{ $t("contact.fileDescription") }} (Máx. {{ MAX_FILE_SIZE_MB }}MB)</p>
-        </div>
-      
-        <!-- Botón de submit con carga -->
-        <button type="submit" class="font-abel bg-blue-800 text-white p-2 rounded w-full">
-          <!-- Condicional para mostrar el texto y el ícono de carga -->
-          <div v-if="isLoading" class="flex items-center justify-center text-white font-semibold">
-            <span class="flex items-center">
-              {{ $t("contact.sendLoadingButton") }}
-              <LoadingIcon class="animate-spin h-6 w-6 ml-2" />
-            </span>
+      <!-- Formulario -->
+      <div class="text-center bg-black/60 text-gray-100 w-4/5 mx-auto backdrop-blur-md p-6 rounded-xl shadow-lg">
+        <form @submit.prevent="submitForm" class="flex flex-col mx-auto space-y-4">
+
+          <!-- Campo de Email -->
+          <div class="w-full">
+            <input 
+              v-model="email" 
+              type="email" 
+              :placeholder="$t('contact.emailPlaceholder')" 
+              required 
+              class="font-abel p-2 bg-black/40 text-gray-100 border border-gray-600 rounded w-full placeholder-gray-400"
+            />
+            <p class="text-left italic text-sm text-gray-500 mt-1">{{ $t("contact.emailDescription") }}</p>
           </div>
-          <span v-else>
-            {{ $t("contact.sendButton") }}
-          </span>
-        </button>
+        
+          <!-- Campo de Mensaje -->
+          <div class="w-full">
+            <textarea 
+              v-model="message" 
+              :placeholder="$t('contact.messagePlaceholder')" 
+              required
+              maxlength="1000"
+              class="font-abel p-2 bg-black/40 text-gray-100 border border-gray-600 rounded w-full placeholder-gray-400"
+            ></textarea>
+            <p class="text-left italic text-sm text-gray-500 mt-1">{{ $t("contact.messageDescription") }} ({{ message.length }}/{{ MAX_TEXT_LENGTH }})</p>
+          </div>
+        
+          <!-- Campo de Archivo con límite de tamaño -->
+          <div class="w-full">
+            <input
+              ref="fileInput"
+              type="file"
+              @change="handleFileUpload" 
+              class="font-abel p-2 bg-black/40 text-gray-100 border border-gray-600 rounded w-full placeholder-gray-400"
+            />
+            <p v-if="fileSizeError" class="text-sm text-red-500 mt-1 text-left">
+              {{ $t("contact.fileSizeError") }}
+            </p>
+            <p class="text-sm text-gray-500 mt-1 text-left">{{ $t("contact.fileDescription") }} (Máx. {{ MAX_FILE_SIZE_MB }}MB)</p>
+          </div>
+        
+          <!-- Botón de submit con carga -->
+          <button type="submit" class="font-abel bg-blue-800 text-white p-2 rounded w-full">
+            <!-- Condicional para mostrar el texto y el ícono de carga -->
+            <div v-if="isLoading" class="flex items-center justify-center text-white font-semibold">
+              <span class="flex items-center">
+                {{ $t("contact.sendLoadingButton") }}
+                <LoadingIcon class="animate-spin h-6 w-6 ml-2" />
+              </span>
+            </div>
+            <span v-else>
+              {{ $t("contact.sendButton") }}
+            </span>
+          </button>
 
-      </form>
+        </form>
+      </div>
     </div>
   </section>
 </template>

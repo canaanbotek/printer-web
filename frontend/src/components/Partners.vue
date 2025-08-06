@@ -1,14 +1,20 @@
 <template>
-  <section id="partners" class="flex flex-col justify-center items-center relative p-5 mb-20">
+  <section 
+    id="partners"
+    class="flex flex-col justify-center items-center relative pb-20 pt-20"
+    style="background: linear-gradient(to bottom, #1a1a1a, #2a2a2a, #3a3a3a, #2a2a2a, #2a2a2a, #1a1a1a);">
+    
+    <!-- Overlay oscuro para mejorar legibilidad -->
+    <div class="absolute inset-0 bg-black/50 z-0"></div>
+
     <!-- Título y Descripción -->
-    <div class="text-center mb-10">
-      <h1 class="font-abel text-gray-100 text-4xl font-bold mb-4 relative">
-        {{ $t("partners.title") }}
-        
-      </h1>
-      <p class="font-abel text-xl max-w-5xl text-gray-100">
-        {{ $t("partners.description") }}
-      </p>
+    <div class="relative z-10 text-left max-w-5xl px-4 mb-10">
+        <h1 class="font-abel text-6xl font-bold text-gray-100">
+          {{ $t("partners.title") }}
+        </h1>
+        <p class="font-abel text-xl text-gray-200 mt-4">
+          {{ $t("partners.description") }}
+        </p>
     </div>
 
     <!-- Carrusel de logos -->
