@@ -56,15 +56,29 @@
               @change="handleFileUpload" 
               class="font-abel p-2 bg-black/40 text-gray-100 border border-gray-600 rounded w-full placeholder-gray-400"
             />
+            <p class="text-sm text-gray-500 mt-1 text-left">
+              {{ $t("contact.fileDescription") }} (Máx. {{ MAX_FILE_SIZE_MB }}MB)
+            </p>
             <p v-if="fileSizeError" class="text-sm text-red-500 mt-1 text-left">
               {{ $t("contact.fileSizeError") }}
             </p>
-            <p class="text-sm text-gray-500 mt-1 text-left">{{ $t("contact.fileDescription") }} (Máx. {{ MAX_FILE_SIZE_MB }}MB)</p>
+            <p v-if="fileTypeError" class="text-sm text-red-500 mt-1 text-left">
+              {{ $t("contact.fileTypeError") }}
+            </p>
           </div>
         
           <!-- Botón de submit con carga -->
-          <button type="submit" class="font-abel bg-blue-800 text-white p-2 rounded w-full">
-
+          <button
+            type="submit"
+            class="font-abel text-white p-2 rounded w-full transition-colors duration-200"
+            :class="{
+              'bg-blue-800 hover:bg-blue-900': !fileSizeError && !fileTypeError && !isLoading,
+              'bg-blue-500 cursor-not-allowed': fileSizeError || fileTypeError,
+              'bg-blue-700 cursor-wait': isLoading
+            }"
+            :disabled="fileSizeError || fileTypeError || isLoading"
+            :aria-disabled="fileSizeError || fileTypeError || isLoading">
+          
             <!-- Condicional para mostrar el texto y el ícono de carga -->
             <div v-if="isLoading" class="flex items-center justify-center text-white font-semibold">
               <span class="flex items-center">
@@ -88,14 +102,30 @@ import { ref } from "vue"
 import { useI18n } from "vue-i18n"
 import LoadingIcon from '../assets/icons/LoadingIcon.vue'
 
-const MAX_FILE_SIZE_MB = 50 // Tamaño máximo del archivo
+const MAX_FILE_SIZE_MB = 20 // Tamaño máximo del archivo
 const MAX_TEXT_LENGTH = 1000 // Tope de caracteres en el text-area
+
+const ALLOWED_FILE_TYPES = [
+  'image/png',
+  'image/jpg',
+  'image/jpeg',
+  'application/pdf',
+  'application/zip',
+  'application/x-zip-compressed',
+  'application/x-rar-compressed',
+  "application/octet-stream",
+  ".stl",
+  ".step",
+  ".3mf",
+  ".gcode"
+]
 
 const { t } = useI18n()
 const email = ref("")
 const message = ref("")
 const file = ref<File | null>(null)
 const fileSizeError = ref(false)
+const fileTypeError = ref(false)
 const fileInput = ref(null)
 const isLoading = ref(false)
 
@@ -108,13 +138,30 @@ const handleFileUpload = (event: Event) => {
     const selectedFile = input.files[0];
     console.log("Este es el archivo:", selectedFile);
 
+    // Resetear errores previos
+    fileSizeError.value = false;
+    fileTypeError.value = false;
+
     // Verifica el tamaño del archivo
-    if (selectedFile.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
-      fileSizeError.value = true;  // Muestra error si el tamaño excede el límite
-      file.value = null;
-    } else {
+    const isSizeValid = selectedFile.size <= MAX_FILE_SIZE_MB * 1024 * 1024;
+    
+    // Verifica formato del archivo
+    const isTypeValid = ALLOWED_FILE_TYPES.includes(selectedFile.type) || 
+                       ALLOWED_FILE_TYPES.some(ext => selectedFile.name.toLowerCase().endsWith(ext));
+
+    if (!isSizeValid) {
+      fileSizeError.value = true;
+    }
+
+    if (!isTypeValid) {
+      fileTypeError.value = true;
+    }
+
+    // Solo asignar el archivo si pasa ambas validaciones
+    if (isSizeValid && isTypeValid) {
       file.value = selectedFile;
-      fileSizeError.value = false;  // Restablecer el error si el archivo es válido
+    } else {
+      file.value = null;
     }
   }
 };
@@ -135,19 +182,19 @@ const submitForm = async () => {
     });
 
     if (response.ok) {
-      alert(t("contact.sendButton") + " ✅");
+      alert(t("contact.sendOk") + " ✅");
       isLoading.value = false
       email.value = "";
       message.value = "";
       fileInput.value.value = ""
     } else {
       isLoading.value = false
-      alert("Error al enviar el mensaje ❌");
+      alert(t("contact.sendFail") + " ❌");
     }
   } catch (error) {
     isLoading.value = false
     console.error("Error:", error);
-    alert("No se pudo enviar el mensaje.");
+    alert(t("contact.sendFailServer") + " ❌");
   }
 };
 </script>
