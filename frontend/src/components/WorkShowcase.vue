@@ -38,10 +38,10 @@
           <div
             class="relative w-full aspect-[3/5] rounded-2xl shadow-md hover:shadow-lg transition-all cursor-pointer bg-center bg-cover flex items-end justify-center"
             :style="`background-image: url('${rubro.cover}')`"
-            @click="openModal(rubro)"
+            @click="openSlide(rubro)"
           >
             <div class="bg-black/60 backdrop-blur-sm text-white text-lg p-2 rounded-b-2xl w-full text-center">
-              {{ rubro.name }}
+              {{ t(`workShowcase.rubros.${rubro.nameKey}`) }}
             </div>
           </div>
         </SwiperSlide>
@@ -54,7 +54,7 @@
         class="mt-8 px-4 max-w-5xl mx-auto animate-fade-in"
       >
         <h3 class="font-abel text-4xl font-bold text-gray-100 mb-4">
-          {{ selectedRubro.name }}
+          {{ t(`workShowcase.rubros.${selectedRubro.nameKey}`) }}
         </h3>
 
         <Swiper
@@ -110,7 +110,7 @@ const selectedRubro = ref(null)
 const rubros = [
   {
     id: "industrial",
-    name: "Industrial",
+    nameKey: "industrial",
     cover: "/src/assets/showcases/industrial/industrialProducts.jpeg",
     component: Rubros,
     items: [
@@ -142,7 +142,7 @@ const rubros = [
   },
   {
     id: "garden",
-    name: "Garden",
+    nameKey: "garden",
     cover: "/src/assets/showcases/garden/maceta_especial.jpeg",
     component: Rubros,
     items: [
@@ -190,7 +190,7 @@ const rubros = [
   },
   {
     id: "deco",
-    name: "Decorativos",
+    nameKey: "deco",
     cover: "/src/assets/showcases/deco/coffeSign.jpeg",
     component: Rubros,
     items: [
@@ -210,7 +210,7 @@ const rubros = [
   },
   {
     id: "products",
-    name: "Productos",
+    nameKey: "products",
     cover: "/src/assets/showcases/products/coffeProducts.jpeg",
     component: Rubros,
     items: [
@@ -230,7 +230,7 @@ const rubros = [
   },
     {
     id: "office",
-    name: "Office",
+    nameKey: "office",
     cover: "/src/assets/showcases/office/officeProducts.jpeg",
     component: Rubros,
     items:[
@@ -242,7 +242,7 @@ const rubros = [
   },
 ];
 
-function openModal(rubro) {
+function openSlide(rubro) {
   // Si ya está seleccionado, lo cerramos
   if (selectedRubro.value?.id === rubro.id) {
     selectedRubro.value = null;
