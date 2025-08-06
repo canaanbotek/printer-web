@@ -31,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-import backgroundImage from "../assets/creality1.jpg";
+import backgroundImage from "../assets/printers/creality1.jpg";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 </script>

@@ -10,12 +10,12 @@
     <!-- Imagen de fondo -->
     <div
       class="absolute inset-0 w-full h-full bg-no-repeat bg-center bg-cover pointer-events-none"
-      :style="`background-image: url('/src/assets/printers3.jpg'); transform: rotateX(${tiltX}deg) rotateY(${tiltY}deg); transition: transform 0.1s;`"
+      :style="`background-image: url('/src/assets/printers/printers3.jpg'); transform: rotateX(${tiltX}deg) rotateY(${tiltY}deg); transition: transform 0.1s;`"
     />
 
     <!-- Contenido del texto -->
     <div class="relative z-10 max-w-4xl text-left">
-      <h1 class="font-abel text-white text-7xl font-bold mb-4">
+      <h1 class="font-abel text-white text-8xl font-bold mb-4">
         {{ $t("home.title") }}
       </h1>
       <p class="font-abel text-gray-200 font-bold text-4xl">

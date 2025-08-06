@@ -58,12 +58,12 @@ import 'swiper/css/navigation'
 const { t } = useI18n()
 
 const logos = [
-  { src: 'src/assets/fdx-logo.png', alt: 'Empresa 1', url: 'https://fdx-ingenieria.com/' },
-  { src: 'src/assets/logo-conicet-white.png', alt: 'Empresa 2', url: 'https://empresa2.com' },
-  { src: 'src/assets/logo-cardio-investigaciones.png', alt: 'Empresa 3', url: 'https://empresa3.com' },
-  { src: 'src/assets/fdx-logo.png', alt: 'Empresa 4', url: 'https://fdx-ingenieria.com/' },
-  { src: 'src/assets/logo-conicet-white.png', alt: 'Empresa 5', url: 'https://empresa5.com' },
-  { src: 'src/assets/logo-cardio-investigaciones.png', alt: 'Empresa 6', url: 'https://empresa6.com' }
+  { src: 'src/assets/partners/fdx-logo.png', alt: 'Empresa 1', url: 'https://fdx-ingenieria.com/' },
+  { src: 'src/assets/partners/logo-conicet-white.png', alt: 'Empresa 2', url: 'https://empresa2.com' },
+  { src: 'src/assets/partners/logo-cardio-investigaciones.png', alt: 'Empresa 3', url: 'https://empresa3.com' },
+  { src: 'src/assets/partners/fdx-logo.png', alt: 'Empresa 4', url: 'https://fdx-ingenieria.com/' },
+  { src: 'src/assets/partners/logo-conicet-white.png', alt: 'Empresa 5', url: 'https://empresa5.com' },
+  { src: 'src/assets/partners/logo-cardio-investigaciones.png', alt: 'Empresa 6', url: 'https://empresa6.com' }
 ]
 </script>
 

@@ -1,5 +1,6 @@
 <template>
   <section
+    id="workShowcase"
     class="py-16 relative"
     style="background: linear-gradient(to bottom, #1a1a1a, #2a2a2a, #3a3a3a, #2a2a2a, #2a2a2a, #1a1a1a);">
     
@@ -19,13 +20,12 @@
 
       <!-- Swiper de rubros -->
       <Swiper
-        :modules="[Autoplay, Navigation]"
+        :modules="[Navigation]"
         :loop="true"
         :space-between="20"
-        :autoplay="{ delay: 3000, disableOnInteraction: false }"
         :breakpoints="{
-          640: { slidesPerView: 2, spaceBetween: 20 },
-          768: { slidesPerView: 3, spaceBetween: 20 },
+          640: { slidesPerView: 1, spaceBetween: 20 },
+          768: { slidesPerView: 2, spaceBetween: 20 },
           1024: { slidesPerView: 5, spaceBetween: 20 },
         }"
         navigation
@@ -49,12 +49,44 @@
 
       </Swiper>
 
-      <!-- Modal -->
-      <RubroModal
-        v-if="selectedRubro"
-        :id="selectedRubro"
-        @close="selectedRubro = null"
-      />
+      <!-- Contenedor del swiper de items (nuevo) -->
+      <div 
+        v-if="selectedRubro" 
+        class="mt-8 px-4 max-w-5xl mx-auto animate-fade-in"
+      >
+        <h3 class="text-2xl font-bold text-gray-100 mb-4">
+          {{ selectedRubro.name }}
+        </h3>
+
+        <Swiper
+          :modules="[Navigation, Pagination]"
+          :slides-per-view="1"
+          :space-between="20"
+          navigation
+          :pagination="{ clickable: true }"
+          :breakpoints="{
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 }
+          }"
+          class="w-full"
+        >
+          <SwiperSlide
+            v-for="(item, index) in selectedRubro.items"
+            :key="index"
+            class="bg-white rounded-lg p-4 shadow-lg"
+          >
+            <img
+              :src="item.image"
+              :alt="item.caption"
+              class="w-full h-64 object-contain mb-2"
+              loading="lazy"
+            />
+            <p class="text-gray-700 text-center">
+              {{ item.caption }}
+            </p>
+          </SwiperSlide>
+        </Swiper>
+      </div>
     </div>
   </section>
 </template>
@@ -64,58 +96,133 @@ import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay, Navigation } from 'swiper/modules'
+import { Pagination } from 'swiper/modules';
 
 import 'swiper/css'
 import 'swiper/css/navigation'
 
 // Modal y componentes por rubros
-import RubroModal from "./RubroModal.vue";
-import Industrial from "./rubro/Industrial.vue";
-import Garden from "./rubro/Garden.vue";
-import Deco from "./rubro/Deco.vue";
-import Products from "./rubro/Products.vue";
-import Office from "./rubro/Office.vue";
+import Rubros from "./Rubros.vue"
 
-const { t } = useI18n();
 
-const selectedRubro = ref(null);
+const { t } = useI18n()
+
+const selectedRubro = ref(null)
 
 const rubros = [
   {
     id: "industrial",
     name: "Industrial",
     cover: "/src/assets/showcases/industrial/industrialProducts.jpeg",
-    component: Industrial,
+    component: Rubros,
+    items: [
+      {
+        image: "/src/assets/showcases/industrial/pc_abs_work.jpeg",
+        caption: "Housing resistente hecho en PC-ABS para maquinaria pesada.",
+      },
+      {
+        image: "/src/assets/showcases/industrial/ABS_piece.jpeg",
+        caption: "Esparcidor de silicona de cuatro terminaciones.",
+      },
+      {
+        image: "/src/assets/showcases/industrial/engranaje_1.jpeg",
+        caption: "Engranaje personalizado.",
+      },
+        {
+        image: "/src/assets/showcases/industrial/guardacable.jpeg",
+        caption: "Guarda cable para electrónica.",
+      },
+      {
+        image: "/src/assets/showcases/industrial/hinge_2.jpeg",
+        caption: "Visagra personalizada.",
+      },
+      {
+        image: "/src/assets/showcases/industrial/hinge_3.jpeg",
+        caption: "Visagra personalizada.",
+      },
+        {
+        image: "/src/assets/showcases/industrial/hinge_4.jpeg",
+        caption: "Visagra personalizada.",
+      },
+      {
+        image: "/src/assets/showcases/industrial/screw_2.jpeg",
+        caption: "Depósito para puntas de destornillador y atornillador portable.",
+      },
+    ]
   },
   {
     id: "garden",
     name: "Garden",
     cover: "/src/assets/showcases/garden/maceta_especial.jpeg",
-    component: Garden,
+    component: Rubros,
+    items: [
+      {
+        image: "/src/assets/materials/pla.png",
+        caption: "Housing resistente hecho en PC-ABS para maquinaria pesada.",
+      },
+      {
+        image: "/img/rubros/industrial2.jpg",
+        caption: "Soporte de ABS para motor lineal.",
+      },
+      {
+        image: "/img/rubros/industrial3.jpg",
+        caption: "Pieza estructural impresa en PETG con tolerancias ajustadas.",
+      },
+    ]
   },
   {
     id: "deco",
     name: "Decorativos",
     cover: "/src/assets/showcases/deco/coffeSign.jpeg",
-    component: Deco,
+    component: Rubros,
+    items: [
+      {
+        image: "/src/assets/materials/pla.png",
+        caption: "Housing resistente hecho en PC-ABS para maquinaria pesada.",
+      },
+      {
+        image: "/img/rubros/industrial2.jpg",
+        caption: "Soporte de ABS para motor lineal.",
+      },
+      {
+        image: "/img/rubros/industrial3.jpg",
+        caption: "Pieza estructural impresa en PETG con tolerancias ajustadas.",
+      },
+    ]
   },
   {
     id: "products",
     name: "Productos",
     cover: "/src/assets/showcases/products/coffeProducts.jpeg",
-    component: Products,
+    component: Rubros,
+    items: [
+      {
+        image: "/src/assets/showcases/products/coffeProducts.jpeg",
+        caption: "Insumos de cafeteria.",
+      },
+    ]
   },
     {
     id: "office",
     name: "Office",
     cover: "/src/assets/showcases/office/officeProducts.jpeg",
-    component: Office,
+    component: Rubros,
+    items:[
+      {
+        image: "/src/assets/showcases/office/officeProducts.jpeg",
+        caption: "Detalles de oficina.",
+      },
+    ]
   },
 ];
 
 function openModal(rubro) {
-  selectedRubro.value = rubro.id;
-  console.log("Rubro elegido:", rubro.id)
+  // Si ya está seleccionado, lo cerramos
+  if (selectedRubro.value?.id === rubro.id) {
+    selectedRubro.value = null;
+  } else {
+    selectedRubro.value = rubro;
+  }
 }
 </script>
 
@@ -133,5 +240,19 @@ function openModal(rubro) {
 
 .swiper-button-next {
   right: -1rem;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.swiper-button-disabled {
+  opacity: 0.3;
+  pointer-events: none;
 }
 </style>

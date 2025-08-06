@@ -4,7 +4,7 @@
     
       <!-- Logo / home -->
       <a href="#home">
-        <span><img src="../assets/3DIndustrywhiteicon.png" alt="Trabajo 1" class="w-40"/></span>
+        <span><img src="../assets/icons/3DIndustrywhiteicon.png" alt="Trabajo 1" class="w-40"/></span>
       </a>
       
       <!-- Menú -->
