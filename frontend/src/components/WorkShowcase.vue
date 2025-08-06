@@ -1,6 +1,6 @@
 <template>
   <section
-    class="py-16"
+    class="py-16 relative"
     style="background: linear-gradient(to bottom, #1a1a1a, #2a2a2a, #3a3a3a, #2a2a2a, #2a2a2a, #1a1a1a);">
     
     <!-- Overlay oscuro para mejorar legibilidad -->

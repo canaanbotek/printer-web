@@ -8,7 +8,7 @@
     <div class="absolute inset-0 bg-black/50 z-0"></div>
 
     <!-- Título y Descripción -->
-    <div class="relative z-10 text-left max-w-5xl px-4 mb-10">
+    <div class="relative z-10 text-left max-w-6xl px-4 mb-10">
         <h1 class="font-abel text-6xl font-bold text-gray-100">
           {{ $t("partners.title") }}
         </h1>
@@ -59,11 +59,11 @@ const { t } = useI18n()
 
 const logos = [
   { src: 'src/assets/fdx-logo.png', alt: 'Empresa 1', url: 'https://fdx-ingenieria.com/' },
-  { src: 'src/assets/conicet.jpg', alt: 'Empresa 2', url: 'https://empresa2.com' },
-  { src: 'src/assets/logo-cardio-investigaciones.jpg', alt: 'Empresa 3', url: 'https://empresa3.com' },
-  { src: 'src/assets/fdx-logo.png', alt: 'Empresa 4', url: 'https://empresa4.com' },
-  { src: 'src/assets/conicet.jpg', alt: 'Empresa 5', url: 'https://empresa5.com' },
-  { src: 'src/assets/logo-cardio-investigaciones.jpg', alt: 'Empresa 6', url: 'https://empresa6.com' }
+  { src: 'src/assets/logo-conicet-white.png', alt: 'Empresa 2', url: 'https://empresa2.com' },
+  { src: 'src/assets/logo-cardio-investigaciones.png', alt: 'Empresa 3', url: 'https://empresa3.com' },
+  { src: 'src/assets/fdx-logo.png', alt: 'Empresa 4', url: 'https://fdx-ingenieria.com/' },
+  { src: 'src/assets/logo-conicet-white.png', alt: 'Empresa 5', url: 'https://empresa5.com' },
+  { src: 'src/assets/logo-cardio-investigaciones.png', alt: 'Empresa 6', url: 'https://empresa6.com' }
 ]
 </script>
 

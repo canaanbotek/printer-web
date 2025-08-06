@@ -1,16 +1,17 @@
 <template>
   <section 
     id="contact"
-    class="flex flex-col relative items-center pb-20 pt-20"
+    class="flex flex-col justify-center items-center relative pb-20 pt-20"
     style="background: linear-gradient(to bottom, #1a1a1a, #2a2a2a, #3a3a3a, #2a2a2a, #2a2a2a, #1a1a1a);">
 
     <!-- Overlay oscuro para mejorar legibilidad -->
     <div class="absolute inset-0 bg-black/50 z-0"></div>
     
     <!-- Contenido principal -->
-    <div class="relative z-10 max-w-6xl mx-auto px-4 text-center"> 
+    <div class="relative z-10 max-w-6xl px-4 text-left">
+
       <!-- Título y descripción -->
-      <div class="text-left max-w-5xl px-4 mb-10">
+      <div class="text-left mb-10">
         <h1 class="font-abel text-6xl font-bold text-gray-100">
           {{ $t("contact.title") }}
         </h1>
@@ -20,7 +21,7 @@
       </div>
 
       <!-- Formulario -->
-      <div class="text-center bg-black/60 text-gray-100 w-4/5 mx-auto backdrop-blur-md p-6 rounded-xl shadow-lg">
+      <div class="text-center bg-black/60 text-gray-100 backdrop-blur-md p-6 rounded-xl shadow-lg">
         <form @submit.prevent="submitForm" class="flex flex-col mx-auto space-y-4">
 
           <!-- Campo de Email -->
@@ -63,6 +64,7 @@
         
           <!-- Botón de submit con carga -->
           <button type="submit" class="font-abel bg-blue-800 text-white p-2 rounded w-full">
+
             <!-- Condicional para mostrar el texto y el ícono de carga -->
             <div v-if="isLoading" class="flex items-center justify-center text-white font-semibold">
               <span class="flex items-center">
