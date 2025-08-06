@@ -21,24 +21,41 @@ const messages = {
     workShowcase: {
       title: "Some works",
       description: "At 3DIndustry, we believe the best way to demonstrate our capabilities is through our work. This section showcases the diverse range of projects we've completed, utilizing a wide range of materials and 3D printing techniques. From functional prototypes to high-precision finished parts, each project reflects our commitment to excellence and innovation. Explore our gallery and discover how we can transform your ideas into reality.",
-      pcbAbsTitle: "PC-ABS",
-      pcbAbsDescription: "This is a customized housing for electronic components.",
-      plaTitle: "PLA",
-      plaDescription: "Unique design lamp, perfect for modern spaces.",
-      plaEspecialTitle: "PLA-SPECIALS",
-      plaEspecialDescription: "Customized pots for interior and exterior decoration.",
-      absTitle: "ABS",
-      absDescription: "Supports for a variety of devices, from cameras to antennas.",
-      tpuTitle: "TPU",
-      tpuDescription: "Unique decorative elements created with high-quality materials.",
-      nylonTitle: "Nylon",
-      nylonDescription: "Functional prototypes designed for testing and demonstrations.",
-      petCfTitle: "PET-CF",
-      petCfDescription: "Modular modules that adapt to different types of projects.",
-      asaTitle: "ASA",
-      asaDescription: "Custom toolbox for professional or home use.",
-      petgTitle: "PETG",
-      petgDescription: "Custom case to protect sensitive electronic components."
+      captions: {
+        industrial: {
+          industrial_1: "Custom gears.",
+          industrial_2: "Custom hinges.",
+          industrial_3: "Four-end silicone spreader.",
+          industrial_4: "Heavy-duty housing made of PC-ABS for heavy machinery.",
+          industrial_5: "Cable guard for electronics.",
+          screw_2: "Storage for screwdriver bits and portable screwdriver.",
+        },
+        garden: {
+          maceta_1: "Straight pot design with special concrete filament.",
+          maceta_2: "Straight pot design with special clay filament.",
+          maceta_3: "Straight decagonal pot design with special clay filament.",
+          maceta_4: "Set of pots in various sizes.",
+          maceta_especial: "Special design pot with special clay filament.",
+          maceta_lisa: "Simple smooth pot design.",
+          plato_mediano: "Pot tray design.",
+          plato_mediano_2: "Pot tray design.",
+          macetax9: "New special pot design.",
+          florero: "Basic vase with concrete-like filament."
+        },
+        deco: {
+          coffe2D: "2D Coffe sign in black.",
+          deco_1: "2D Mountain sign in black.",
+          deco_2: "2D Puffin sign in black."
+        },
+        products: {
+          product_1: "Coffee supplies.",
+          product_2: "Coffee supplies.",
+          product_3: "Coffee supplies."
+        },
+        office: {
+          officeProducts: "Office details."
+        }
+      }
     },
     materials: {
       title: "Printing materials",
@@ -135,24 +152,41 @@ const messages = {
     workShowcase: {
       title: "Algunos trabajos",
       description: "En 3DIndustry, creemos que la mejor manera de demostrar nuestra capacidad es a través de nuestros trabajos. Esta sección es una muestra de la diversidad de proyectos que hemos realizado, utilizando una amplia gama de materiales y técnicas de impresión 3D. Desde prototipos funcionales hasta piezas finales de alta precisión, cada proyecto refleja nuestro compromiso con la excelencia y la innovación. Explora nuestra galería y descubre cómo podemos transformar tus ideas en realidad.",
-      pcbAbsTitle: "PC-ABS",
-      pcbAbsDescription: "Este es un ejemplo de housing para componentes electrónicos.",
-      plaTitle: "PLA",
-      plaDescription: "Lámpara de diseño único, perfecta para ambientes modernos.",
-      plaEspecialTitle: "PLA-ESPECIALES",
-      plaEspecialDescription: "Macetas personalizadas para decoración de interiores y exteriores.",
-      absTitle: "ABS",
-      absDescription: "Soportes para una variedad de dispositivos, desde cámaras hasta antenas.",
-      tpuTitle: "TPU",
-      tpuDescription: "Elementos decorativos únicos creados con materiales de alta calidad.",
-      nylonTitle: "Nylon",
-      nylonDescription: "Prototipos funcionales diseñados para pruebas y demostraciones.",
-      petCfTitle: "PET-CF",
-      petCfDescription: "Módulos modulares que se adaptan a diferentes tipos de proyectos.",
-      asaTitle: "ASA",
-      asaDescription: "Caja de herramientas personalizada para uso profesional o doméstico.",
-      petgTitle: "PETG",
-      petgDescription: "Estuche a medida para proteger componentes electrónicos sensibles."
+      captions: {
+        industrial: {
+          industrial_1: "Engranaje personalizado.",
+          industrial_2: "Visagras personalizada.",
+          industrial_3: "Esparcidor de silicona de cuatro terminaciones.",
+          industrial_4: "Housing resistente hecho en PC-ABS para maquinaria pesada.",
+          industrial_5: "Guarda cable para electrónica.",
+          screw_2: "Depósito para puntas de destornillador y atornillador portable.",
+        },
+        garden: {
+          maceta_1: "Diseño de maceta recto con filamento especial concreto.",
+          maceta_2: "Diseño de maceta recto con filamento especial arcilla.",
+          maceta_3: "Diseño de maceta decagonal recto con filamento especial arcilla.",
+          maceta_4: "Conjunto de macetas de distintos tamaños.",
+          maceta_especial: "Maceta de diseño especial con filamento especial arcilla.",
+          maceta_lisa: "Diseño de macetala lisa simple.",
+          plato_mediano: "Diseño de plato para maceta.",
+          plato_mediano_2: "Diseño de plato para maceta.",
+          macetax9: "Nuevo diseño de maceta especial.",
+          florero: "Florero básico con filamento imitación concreto.",
+        },
+        deco: {
+          coffe2D: "Cartel 2D Coffe en negro.",
+          deco_1: "Cartel 2D Mountain en negro.",
+          deco_2: "Cartel 2D frailecillo en negro.",
+        },
+        products: {
+          product_1: "Insumos de cafeteria.",
+          product_2: "Insumos de cafeteria.",
+          product_3: "Insumos de cafeteria.",
+        },
+        office: {
+          officeProducts: "Detalles de oficina.",
+        }
+      }
     },
     materials: {
       title: "Materiales de impresión",

@@ -12,8 +12,7 @@
       <!-- Título y descripción -->
       <div class="text-left max-w-5xl px-4 mb-10">
         <h1 class="font-abel text-6xl font-bold text-gray-100">{{ t("workShowcase.title") }}</h1>
-        
-        <p class="font-abel text-xl text-gray-400 mt-4">
+        <p class="font-abel text-xl text-gray-200 mt-4">
           {{ t("workShowcase.description") }}
         </p>
       </div>
@@ -49,12 +48,12 @@
 
       </Swiper>
 
-      <!-- Contenedor del swiper de items (nuevo) -->
+      <!-- Contenedor del swiper de items -->
       <div 
         v-if="selectedRubro" 
         class="mt-8 px-4 max-w-5xl mx-auto animate-fade-in"
       >
-        <h3 class="text-2xl font-bold text-gray-100 mb-4">
+        <h3 class="font-abel text-4xl font-bold text-gray-100 mb-4">
           {{ selectedRubro.name }}
         </h3>
 
@@ -73,17 +72,16 @@
           <SwiperSlide
             v-for="(item, index) in selectedRubro.items"
             :key="index"
-            class="bg-white rounded-lg p-4 shadow-lg"
+            class="bg-white rounded-lg shadow-lg"
           >
-            <img
-              :src="item.image"
-              :alt="item.caption"
-              class="w-full h-64 object-contain mb-2"
-              loading="lazy"
-            />
-            <p class="text-gray-700 text-center">
-              {{ item.caption }}
-            </p>
+            <div
+              class="relative w-full aspect-[3/5] rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-center bg-cover flex items-end justify-center"
+              :style="`background-image: url('${item.image}')`"
+            >
+              <div class="bg-black/60 backdrop-blur-sm text-white text-lg p-2 rounded-b-lg w-full text-center">
+                {{ t(`workShowcase.captions.${selectedRubro.id}.${item.captionKey}`) }}
+              </div>
+            </div>
           </SwiperSlide>
         </Swiper>
       </div>
@@ -117,36 +115,28 @@ const rubros = [
     component: Rubros,
     items: [
       {
-        image: "/src/assets/showcases/industrial/pc_abs_work.jpeg",
-        caption: "Housing resistente hecho en PC-ABS para maquinaria pesada.",
+        image: "/src/assets/showcases/industrial/industrial_4.jpeg",
+        captionKey: "industrial_4",
       },
       {
-        image: "/src/assets/showcases/industrial/ABS_piece.jpeg",
-        caption: "Esparcidor de silicona de cuatro terminaciones.",
+        image: "/src/assets/showcases/industrial/industrial_3.jpeg",
+        captionKey: "industrial_3",
       },
       {
-        image: "/src/assets/showcases/industrial/engranaje_1.jpeg",
-        caption: "Engranaje personalizado.",
+        image: "/src/assets/showcases/industrial/industrial_1.jpeg",
+        captionKey: "industrial_1",
       },
         {
-        image: "/src/assets/showcases/industrial/guardacable.jpeg",
-        caption: "Guarda cable para electrónica.",
+        image: "/src/assets/showcases/industrial/industrial_5.jpeg",
+        captionKey: "industrial_5",
       },
       {
-        image: "/src/assets/showcases/industrial/hinge_2.jpeg",
-        caption: "Visagra personalizada.",
-      },
-      {
-        image: "/src/assets/showcases/industrial/hinge_3.jpeg",
-        caption: "Visagra personalizada.",
-      },
-        {
-        image: "/src/assets/showcases/industrial/hinge_4.jpeg",
-        caption: "Visagra personalizada.",
+        image: "/src/assets/showcases/industrial/industrial_2.jpeg",
+        captionKey: "industrial_2",
       },
       {
         image: "/src/assets/showcases/industrial/screw_2.jpeg",
-        caption: "Depósito para puntas de destornillador y atornillador portable.",
+        captionKey: "screw_2",
       },
     ]
   },
@@ -157,16 +147,44 @@ const rubros = [
     component: Rubros,
     items: [
       {
-        image: "/src/assets/materials/pla.png",
-        caption: "Housing resistente hecho en PC-ABS para maquinaria pesada.",
+        image: "/src/assets/showcases/garden/maceta_1.jpeg",
+        captionKey: "maceta_1",
       },
       {
-        image: "/img/rubros/industrial2.jpg",
-        caption: "Soporte de ABS para motor lineal.",
+        image: "/src/assets/showcases/garden/maceta_2.jpeg",
+        captionKey: "maceta_2",
       },
       {
-        image: "/img/rubros/industrial3.jpg",
-        caption: "Pieza estructural impresa en PETG con tolerancias ajustadas.",
+        image: "/src/assets/showcases/garden/maceta_3.jpeg",
+        captionKey: "maceta_3",
+      },
+      {
+        image: "/src/assets/showcases/garden/maceta_4.jpeg",
+        captionKey: "maceta_4",
+      },
+      {
+        image: "/src/assets/showcases/garden/maceta_especial.jpeg",
+        captionKey: "maceta_especial",
+      },
+      {
+        image: "/src/assets/showcases/garden/maceta_lisa.jpeg",
+        captionKey: "maceta_lisa",
+      },
+      {
+        image: "/src/assets/showcases/garden/plato_mediano.jpeg",
+        captionKey: "plato_mediano",
+      },
+      {
+        image: "/src/assets/showcases/garden/plato_mediano_2.jpeg",
+        captionKey: "plato_mediano_2",
+      },
+      {
+        image: "/src/assets/showcases/garden/macetax9.jpeg",
+        captionKey: "macetax9",
+      },
+      {
+        image: "/src/assets/showcases/garden/florero.jpeg",
+        captionKey: "florero",
       },
     ]
   },
@@ -177,16 +195,16 @@ const rubros = [
     component: Rubros,
     items: [
       {
-        image: "/src/assets/materials/pla.png",
-        caption: "Housing resistente hecho en PC-ABS para maquinaria pesada.",
+        image: "/src/assets/showcases/deco/coffe2D.jpeg",
+        captionKey: "coffe2D",
       },
       {
-        image: "/img/rubros/industrial2.jpg",
-        caption: "Soporte de ABS para motor lineal.",
+        image: "/src/assets/showcases/deco/deco_1.jpeg",
+        captionKey: "deco_1",
       },
       {
-        image: "/img/rubros/industrial3.jpg",
-        caption: "Pieza estructural impresa en PETG con tolerancias ajustadas.",
+        image: "/src/assets/showcases/deco/deco_2.jpeg",
+        captionKey: "deco_2",
       },
     ]
   },
@@ -197,8 +215,16 @@ const rubros = [
     component: Rubros,
     items: [
       {
-        image: "/src/assets/showcases/products/coffeProducts.jpeg",
-        caption: "Insumos de cafeteria.",
+        image: "/src/assets/showcases/products/product_1.jpeg",
+        captionKey: "product_1",
+      },
+      {
+        image: "/src/assets/showcases/products/product_2.jpeg",
+        captionKey: "product_2",
+      },
+            {
+        image: "/src/assets/showcases/products/product_3.jpeg",
+        captionKey: "product_3",
       },
     ]
   },
@@ -210,7 +236,7 @@ const rubros = [
     items:[
       {
         image: "/src/assets/showcases/office/officeProducts.jpeg",
-        caption: "Detalles de oficina.",
+        captionKey: "officeProducts",
       },
     ]
   },

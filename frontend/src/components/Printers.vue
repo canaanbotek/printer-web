@@ -2,7 +2,7 @@
   <section
     id="printers"
     class="relative w-full bg-black flex justify-center bg-no-repeat bg-cover bg-center p-5"
-    :style="{ backgroundImage: `url(${backgroundImage})` }"
+    style="background-image: url('/src/assets/printers/creality1.jpg');"
   >
     <!-- Overlay opcional para oscurecer imagen -->
     <div class="absolute inset-0 bg-black/30 z-0"></div>
@@ -31,9 +31,9 @@
 </template>
 
 <script setup lang="ts">
-import backgroundImage from "../assets/printers/creality1.jpg";
-import { useI18n } from "vue-i18n";
-const { t } = useI18n();
+import { useI18n } from "vue-i18n"
+
+const { t } = useI18n()
 </script>
 
 
